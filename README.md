@@ -8,4 +8,5 @@ Renzo Pampalona - A00993790
 Kabilan Thaarajah - A00986030  
 
 #### About:
-A small iOS game made for BCIT BTechGames program. 
+A small iOS game made for BCIT BTechGames program.   
+Written in ObjC and C++.  
