@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029352218BFEF006845C9 /* AppDelegate.m */; };
+		BBC029392218BFEF006845C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029382218BFEF006845C9 /* ViewController.m */; };
+		BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293A2218BFEF006845C9 /* Main.storyboard */; };
+		BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293D2218BFF0006845C9 /* Assets.xcassets */; };
+		BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */; };
+		BBC029442218BFF0006845C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029432218BFF0006845C9 /* main.m */; };
+		BBC0294E2218BFF0006845C9 /* GunnerTheRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC0294D2218BFF0006845C9 /* GunnerTheRunnerTests.m */; };
+		BBC029592218BFF0006845C9 /* GunnerTheRunnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029582218BFF0006845C9 /* GunnerTheRunnerUITests.m */; };
+		BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = BBC0296B2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png */; };
+		BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029712218D79B006845C9 /* G19_Gen4-107rot (1).png */; };
+		BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029732218D952006845C9 /* highVelocityCutlery.png */; };
+		BBC029762218E845006845C9 /* bullets.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029752218E845006845C9 /* bullets.png */; };
+		BBC0297C2218EF15006845C9 /* parallax-mountain-mountains.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029772218EF14006845C9 /* parallax-mountain-mountains.png */; };
+		BBC0297D2218EF15006845C9 /* parallax-mountain-foreground-trees.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029782218EF15006845C9 /* parallax-mountain-foreground-trees.png */; };
+		BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */; };
+		BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC0297A2218EF15006845C9 /* parallax-mountain-trees.png */; };
+		BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBC0294A2218BFF0006845C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBC029292218BFEF006845C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBC029302218BFEF006845C9;
+			remoteInfo = GunnerTheRunner;
+		};
+		BBC029552218BFF0006845C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBC029292218BFEF006845C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBC029302218BFEF006845C9;
+			remoteInfo = GunnerTheRunner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBC029312218BFEF006845C9 /* GunnerTheRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GunnerTheRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBC029342218BFEF006845C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BBC029352218BFEF006845C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BBC029372218BFEF006845C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BBC029382218BFEF006845C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BBC0293B2218BFEF006845C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBC0293D2218BFF0006845C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBC029402218BFF0006845C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBC029422218BFF0006845C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBC029432218BFF0006845C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBC029492218BFF0006845C9 /* GunnerTheRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GunnerTheRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBC0294D2218BFF0006845C9 /* GunnerTheRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GunnerTheRunnerTests.m; sourceTree = "<group>"; };
+		BBC0294F2218BFF0006845C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBC029542218BFF0006845C9 /* GunnerTheRunnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GunnerTheRunnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBC029582218BFF0006845C9 /* GunnerTheRunnerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GunnerTheRunnerUITests.m; sourceTree = "<group>"; };
+		BBC0295A2218BFF0006845C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBC0296B2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coollogo_com-8202986rotated2 (1).png"; sourceTree = "<group>"; };
+		BBC029712218D79B006845C9 /* G19_Gen4-107rot (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "G19_Gen4-107rot (1).png"; sourceTree = "<group>"; };
+		BBC029732218D952006845C9 /* highVelocityCutlery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highVelocityCutlery.png; sourceTree = "<group>"; };
+		BBC029752218E845006845C9 /* bullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullets.png; sourceTree = "<group>"; };
+		BBC029772218EF14006845C9 /* parallax-mountain-mountains.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-mountains.png"; sourceTree = "<group>"; };
+		BBC029782218EF15006845C9 /* parallax-mountain-foreground-trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-foreground-trees.png"; sourceTree = "<group>"; };
+		BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-montain-far.png"; sourceTree = "<group>"; };
+		BBC0297A2218EF15006845C9 /* parallax-mountain-trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-trees.png"; sourceTree = "<group>"; };
+		BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-bg.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBC0292E2218BFEF006845C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029462218BFF0006845C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029512218BFF0006845C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBC029282218BFEF006845C9 = {
+			isa = PBXGroup;
+			children = (
+				BBC029332218BFEF006845C9 /* GunnerTheRunner */,
+				BBC0294C2218BFF0006845C9 /* GunnerTheRunnerTests */,
+				BBC029572218BFF0006845C9 /* GunnerTheRunnerUITests */,
+				BBC029322218BFEF006845C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBC029322218BFEF006845C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBC029312218BFEF006845C9 /* GunnerTheRunner.app */,
+				BBC029492218BFF0006845C9 /* GunnerTheRunnerTests.xctest */,
+				BBC029542218BFF0006845C9 /* GunnerTheRunnerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBC029332218BFEF006845C9 /* GunnerTheRunner */ = {
+			isa = PBXGroup;
+			children = (
+				BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */,
+				BBC029782218EF15006845C9 /* parallax-mountain-foreground-trees.png */,
+				BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */,
+				BBC029772218EF14006845C9 /* parallax-mountain-mountains.png */,
+				BBC0297A2218EF15006845C9 /* parallax-mountain-trees.png */,
+				BBC029752218E845006845C9 /* bullets.png */,
+				BBC0296B2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png */,
+				BBC029712218D79B006845C9 /* G19_Gen4-107rot (1).png */,
+				BBC029732218D952006845C9 /* highVelocityCutlery.png */,
+				BBC029342218BFEF006845C9 /* AppDelegate.h */,
+				BBC029352218BFEF006845C9 /* AppDelegate.m */,
+				BBC029372218BFEF006845C9 /* ViewController.h */,
+				BBC029382218BFEF006845C9 /* ViewController.m */,
+				BBC0293A2218BFEF006845C9 /* Main.storyboard */,
+				BBC0293D2218BFF0006845C9 /* Assets.xcassets */,
+				BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */,
+				BBC029422218BFF0006845C9 /* Info.plist */,
+				BBC029432218BFF0006845C9 /* main.m */,
+			);
+			path = GunnerTheRunner;
+			sourceTree = "<group>";
+		};
+		BBC0294C2218BFF0006845C9 /* GunnerTheRunnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBC0294D2218BFF0006845C9 /* GunnerTheRunnerTests.m */,
+				BBC0294F2218BFF0006845C9 /* Info.plist */,
+			);
+			path = GunnerTheRunnerTests;
+			sourceTree = "<group>";
+		};
+		BBC029572218BFF0006845C9 /* GunnerTheRunnerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBC029582218BFF0006845C9 /* GunnerTheRunnerUITests.m */,
+				BBC0295A2218BFF0006845C9 /* Info.plist */,
+			);
+			path = GunnerTheRunnerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBC029302218BFEF006845C9 /* GunnerTheRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBC0295D2218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunner" */;
+			buildPhases = (
+				BBC0292D2218BFEF006845C9 /* Sources */,
+				BBC0292E2218BFEF006845C9 /* Frameworks */,
+				BBC0292F2218BFEF006845C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GunnerTheRunner;
+			productName = GunnerTheRunner;
+			productReference = BBC029312218BFEF006845C9 /* GunnerTheRunner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBC029482218BFF0006845C9 /* GunnerTheRunnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBC029602218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunnerTests" */;
+			buildPhases = (
+				BBC029452218BFF0006845C9 /* Sources */,
+				BBC029462218BFF0006845C9 /* Frameworks */,
+				BBC029472218BFF0006845C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBC0294B2218BFF0006845C9 /* PBXTargetDependency */,
+			);
+			name = GunnerTheRunnerTests;
+			productName = GunnerTheRunnerTests;
+			productReference = BBC029492218BFF0006845C9 /* GunnerTheRunnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBC029532218BFF0006845C9 /* GunnerTheRunnerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBC029632218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunnerUITests" */;
+			buildPhases = (
+				BBC029502218BFF0006845C9 /* Sources */,
+				BBC029512218BFF0006845C9 /* Frameworks */,
+				BBC029522218BFF0006845C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBC029562218BFF0006845C9 /* PBXTargetDependency */,
+			);
+			name = GunnerTheRunnerUITests;
+			productName = GunnerTheRunnerUITests;
+			productReference = BBC029542218BFF0006845C9 /* GunnerTheRunnerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBC029292218BFEF006845C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					BBC029302218BFEF006845C9 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					BBC029482218BFF0006845C9 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BBC029302218BFEF006845C9;
+					};
+					BBC029532218BFF0006845C9 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BBC029302218BFEF006845C9;
+					};
+				};
+			};
+			buildConfigurationList = BBC0292C2218BFEF006845C9 /* Build configuration list for PBXProject "GunnerTheRunner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBC029282218BFEF006845C9;
+			productRefGroup = BBC029322218BFEF006845C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBC029302218BFEF006845C9 /* GunnerTheRunner */,
+				BBC029482218BFF0006845C9 /* GunnerTheRunnerTests */,
+				BBC029532218BFF0006845C9 /* GunnerTheRunnerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBC0292F2218BFEF006845C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC0297D2218EF15006845C9 /* parallax-mountain-foreground-trees.png in Resources */,
+				BBC029762218E845006845C9 /* bullets.png in Resources */,
+				BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */,
+				BBC0297C2218EF15006845C9 /* parallax-mountain-mountains.png in Resources */,
+				BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */,
+				BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */,
+				BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */,
+				BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */,
+				BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */,
+				BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */,
+				BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */,
+				BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029472218BFF0006845C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029522218BFF0006845C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBC0292D2218BFEF006845C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC029392218BFEF006845C9 /* ViewController.m in Sources */,
+				BBC029442218BFF0006845C9 /* main.m in Sources */,
+				BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029452218BFF0006845C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC0294E2218BFF0006845C9 /* GunnerTheRunnerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC029502218BFF0006845C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC029592218BFF0006845C9 /* GunnerTheRunnerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBC0294B2218BFF0006845C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBC029302218BFEF006845C9 /* GunnerTheRunner */;
+			targetProxy = BBC0294A2218BFF0006845C9 /* PBXContainerItemProxy */;
+		};
+		BBC029562218BFF0006845C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBC029302218BFEF006845C9 /* GunnerTheRunner */;
+			targetProxy = BBC029552218BFF0006845C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBC0293A2218BFEF006845C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBC0293B2218BFEF006845C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBC029402218BFF0006845C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBC0295B2218BFF0006845C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BBC0295C2218BFF0006845C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBC0295E2218BFF0006845C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBC0295F2218BFF0006845C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBC029612218BFF0006845C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GunnerTheRunner.app/GunnerTheRunner";
+			};
+			name = Debug;
+		};
+		BBC029622218BFF0006845C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GunnerTheRunner.app/GunnerTheRunner";
+			};
+			name = Release;
+		};
+		BBC029642218BFF0006845C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunnerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunnerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GunnerTheRunner;
+			};
+			name = Debug;
+		};
+		BBC029652218BFF0006845C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GunnerTheRunnerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunnerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GunnerTheRunner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBC0292C2218BFEF006845C9 /* Build configuration list for PBXProject "GunnerTheRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC0295B2218BFF0006845C9 /* Debug */,
+				BBC0295C2218BFF0006845C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBC0295D2218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC0295E2218BFF0006845C9 /* Debug */,
+				BBC0295F2218BFF0006845C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBC029602218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC029612218BFF0006845C9 /* Debug */,
+				BBC029622218BFF0006845C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBC029632218BFF0006845C9 /* Build configuration list for PBXNativeTarget "GunnerTheRunnerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC029642218BFF0006845C9 /* Debug */,
+				BBC029652218BFF0006845C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBC029292218BFEF006845C9 /* Project object */;
+}
