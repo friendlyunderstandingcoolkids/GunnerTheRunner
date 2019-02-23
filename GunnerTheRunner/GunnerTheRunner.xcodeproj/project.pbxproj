@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A472ED362221FBF80042EB2A /* RWTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED272221FBF60042EB2A /* RWTModel.m */; };
+		A472ED372221FBF80042EB2A /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A472ED282221FBF60042EB2A /* Game.storyboard */; };
+		A472ED382221FBF80042EB2A /* RWTSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */; };
+		A472ED3C2221FBF80042EB2A /* RWTBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED332221FBF70042EB2A /* RWTBaseEffect.m */; };
+		A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */; };
+		A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED352221FBF80042EB2A /* RWTViewController.m */; };
+		A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED452221FD7A0042EB2A /* RWTGlock.m */; };
+		A472ED492221FE8A0042EB2A /* Glock19.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED482221FE8A0042EB2A /* Glock19.m */; };
+		A472ED4D2221FF390042EB2A /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = A472ED4C2221FF380042EB2A /* rainbow.png */; };
 		BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029352218BFEF006845C9 /* AppDelegate.m */; };
 		BBC029392218BFEF006845C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029382218BFEF006845C9 /* ViewController.m */; };
 		BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293A2218BFEF006845C9 /* Main.storyboard */; };
@@ -44,6 +53,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A472ED272221FBF60042EB2A /* RWTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTModel.m; sourceTree = "<group>"; };
+		A472ED282221FBF60042EB2A /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		A472ED292221FBF60042EB2A /* RWTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTModel.h; sourceTree = "<group>"; };
+		A472ED2A2221FBF70042EB2A /* RWTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTViewController.h; sourceTree = "<group>"; };
+		A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragment.glsl; sourceTree = "<group>"; };
+		A472ED2D2221FBF70042EB2A /* RWTVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTVertex.h; sourceTree = "<group>"; };
+		A472ED312221FBF70042EB2A /* RWTBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBaseEffect.h; sourceTree = "<group>"; };
+		A472ED332221FBF70042EB2A /* RWTBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBaseEffect.m; sourceTree = "<group>"; };
+		A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleVertex.glsl; sourceTree = "<group>"; };
+		A472ED352221FBF80042EB2A /* RWTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTViewController.m; sourceTree = "<group>"; };
+		A472ED442221FD7A0042EB2A /* RWTGlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTGlock.h; sourceTree = "<group>"; };
+		A472ED452221FD7A0042EB2A /* RWTGlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTGlock.m; sourceTree = "<group>"; };
+		A472ED472221FE890042EB2A /* Glock19.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glock19.h; sourceTree = "<group>"; };
+		A472ED482221FE8A0042EB2A /* Glock19.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glock19.m; sourceTree = "<group>"; };
+		A472ED4C2221FF380042EB2A /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
 		BBC029312218BFEF006845C9 /* GunnerTheRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GunnerTheRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC029342218BFEF006845C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBC029352218BFEF006845C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +161,21 @@
 				BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */,
 				BBC029422218BFF0006845C9 /* Info.plist */,
 				BBC029432218BFF0006845C9 /* main.m */,
+				A472ED282221FBF60042EB2A /* Game.storyboard */,
+				A472ED312221FBF70042EB2A /* RWTBaseEffect.h */,
+				A472ED332221FBF70042EB2A /* RWTBaseEffect.m */,
+				A472ED292221FBF60042EB2A /* RWTModel.h */,
+				A472ED272221FBF60042EB2A /* RWTModel.m */,
+				A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */,
+				A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */,
+				A472ED2D2221FBF70042EB2A /* RWTVertex.h */,
+				A472ED2A2221FBF70042EB2A /* RWTViewController.h */,
+				A472ED352221FBF80042EB2A /* RWTViewController.m */,
+				A472ED472221FE890042EB2A /* Glock19.h */,
+				A472ED482221FE8A0042EB2A /* Glock19.m */,
+				A472ED4C2221FF380042EB2A /* rainbow.png */,
+				A472ED442221FD7A0042EB2A /* RWTGlock.h */,
+				A472ED452221FD7A0042EB2A /* RWTGlock.m */,
 			);
 			path = GunnerTheRunner;
 			sourceTree = "<group>";
@@ -262,16 +301,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC0297D2218EF15006845C9 /* parallax-mountain-foreground-trees.png in Resources */,
+				A472ED382221FBF80042EB2A /* RWTSimpleFragment.glsl in Resources */,
 				BBC029762218E845006845C9 /* bullets.png in Resources */,
 				BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */,
 				BBC0297C2218EF15006845C9 /* parallax-mountain-mountains.png in Resources */,
+				A472ED372221FBF80042EB2A /* Game.storyboard in Resources */,
 				BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */,
 				BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */,
+				A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */,
 				BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */,
 				BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */,
 				BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */,
 				BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */,
 				BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */,
+				A472ED4D2221FF390042EB2A /* rainbow.png in Resources */,
 				BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,8 +341,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC029392218BFEF006845C9 /* ViewController.m in Sources */,
+				A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */,
 				BBC029442218BFF0006845C9 /* main.m in Sources */,
 				BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */,
+				A472ED492221FE8A0042EB2A /* Glock19.m in Sources */,
+				A472ED3C2221FBF80042EB2A /* RWTBaseEffect.m in Sources */,
+				A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */,
+				A472ED362221FBF80042EB2A /* RWTModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,14 +519,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CHCN72FCLW;
+				DEVELOPMENT_TEAM = AW8F3NYK5G;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -489,14 +538,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CHCN72FCLW;
+				DEVELOPMENT_TEAM = AW8F3NYK5G;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
