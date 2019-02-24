@@ -10,5 +10,6 @@
 @interface RWTGlock : RWTModel
 
 - (instancetype)initWithShader:(RWTBaseEffect *)shader;
-
+- (void)fingerLocationX:(float)xPosition fingerLocationY:(float)yPosition;
+- (void)doJump:(BOOL)isJump;
 @end

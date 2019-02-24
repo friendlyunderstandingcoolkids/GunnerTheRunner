@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @import GLKit;
 
 @interface RWTBaseEffect : NSObject
