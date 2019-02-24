@@ -11,7 +11,12 @@
 #import "RWTGlock.h"
 
 @interface RWTViewController ()
+{
+    RWTGlock *RWTGlockScript;
+    
+    BOOL isJump;
 
+}
 @end
 
 @implementation RWTViewController {
@@ -29,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    RWTGlockScript = [[RWTGlock alloc] init];
+    isJump = true;
     GLKView *view = (GLKView *)self.view;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     view.drawableDepthFormat = GLKViewDrawableDepthFormat16;
@@ -37,6 +44,19 @@
     
     [self setupScene];
     
+    //Tap Recognizer
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapResponder:)];
+    //Number of taps required
+    tapRecognizer.numberOfTapsRequired = 2;
+    //Number of fingers on screen
+    tapRecognizer.numberOfTouchesRequired = 1;
+    //Add Gesture Recognizer to View
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    //Pan Recognizer
+    UIPanGestureRecognizer * panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panResponder:)];
+    panRecognizer.maximumNumberOfTouches = 1;
+    [self.view addGestureRecognizer:panRecognizer];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -48,7 +68,7 @@
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     GLKMatrix4 viewMatrix = GLKMatrix4MakeTranslation(0, -1, -5);
-    viewMatrix = GLKMatrix4Rotate(viewMatrix, GLKMathDegreesToRadians(20), 1, 0, 0);
+    viewMatrix = GLKMatrix4Rotate(viewMatrix, GLKMathDegreesToRadians(0), 1, 1, 1);
     
     [_glock renderWithParentModelViewMatrix:viewMatrix];
     //[_cube renderWithParentModelViewMatrix:viewMatrix];
@@ -60,4 +80,21 @@
     //[_cube updateWithDelta:self.timeSinceLastUpdate];
 }
 
+
+//responds to double tap
+-(IBAction)tapResponder:(UITapGestureRecognizer *) recognizer
+{
+    [RWTGlockScript doJump:(BOOL)isJump];
+}
+
+////responds to pan
+//-(IBAction)panResponder:(UIPanGestureRecognizer *) recognizer
+//{
+//    CGPoint touchLocation = [recognizer locationInView:self.view];
+//    NSLog(@"%f",touchLocation);
+//    float xPosition = touchLocation.x;
+//    float yPosition = touchLocation.y;
+//    [RWTGlockScript fingerLocationX:(float)xPosition fingerLocationY:(float)yPosition];
+//
+//}
 @end

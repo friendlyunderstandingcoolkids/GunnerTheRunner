@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RWTGlock.h"
 @import GLKit;
 
 @interface RWTViewController : GLKViewController
