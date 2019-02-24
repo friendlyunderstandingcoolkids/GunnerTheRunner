@@ -73,7 +73,10 @@
 }
 
 - (IBAction)startGame:(UITapGestureRecognizer *) params {
-    NSLog(@"binch");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Game" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"RWTViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:NULL];
 
 }
 @end
