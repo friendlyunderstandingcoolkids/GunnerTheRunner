@@ -54,9 +54,9 @@
     [self.view addGestureRecognizer:tapRecognizer];
     
     //Pan Recognizer
-    UIPanGestureRecognizer * panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panResponder:)];
+    /*UIPanGestureRecognizer * panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panResponder:)];
     panRecognizer.maximumNumberOfTouches = 1;
-    [self.view addGestureRecognizer:panRecognizer];
+    [self.view addGestureRecognizer:panRecognizer];*/
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
