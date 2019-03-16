@@ -23,14 +23,15 @@ float yPosition = 0.1;
 - (instancetype)initWithShader:(RWTBaseEffect *)shader {
     Velocity = startVelocity;
     if ((self = [super initWithName:"glock" shader:shader vertices:(RWTVertex *)Cube_Material_Vertices vertexCount:sizeof(Cube_Material_Vertices)/sizeof(Cube_Material_Vertices[0])])) {
-        [self loadTexture:@"rainbow.png"];
+        [self loadTexture:@"brass.png"];
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
-        self.scale = 0.22;
+        self.scale = GLKVector3Make(0.22, 0.22, 0.22);
         self.position = GLKVector3Make(-3, 0.1, 1.5);
         self.rotationX -= M_PI/180 * 10;
         self.rotationY -= M_PI/180 * 8;
         self.rotationZ = M_PI/180 * 90;
+        self.vertexInc = 0;
     }
     return self;
 }

@@ -1,5 +1,6 @@
 uniform highp mat4 u_ModelViewMatrix;
 uniform highp mat4 u_ProjectionMatrix;
+uniform vec2 TexCoordShift;
 
 attribute vec4 a_Position;
 attribute vec4 a_Color;
@@ -14,7 +15,7 @@ varying lowp vec3 frag_Position;
 void main(void) {
     frag_Color = a_Color;
     gl_Position = u_ProjectionMatrix * u_ModelViewMatrix * a_Position;
-    frag_TexCoord = a_TexCoord;
+    frag_TexCoord = a_TexCoord - TexCoordShift;
     frag_Normal = (u_ModelViewMatrix * vec4(a_Normal, 0.0)).xyz;
     frag_Position = (u_ModelViewMatrix * a_Position).xyz;
 }

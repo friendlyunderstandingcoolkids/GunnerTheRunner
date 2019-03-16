@@ -18,8 +18,9 @@
 @property (nonatomic) float rotationX;
 @property (nonatomic) float rotationY;
 @property (nonatomic) float rotationZ;
-@property (nonatomic) float scale;
+@property (nonatomic, assign) GLKVector3 scale;
 @property (nonatomic) GLuint texture;
+@property (nonatomic) float vertexInc;
 
 - (instancetype)initWithName:(char *)name shader:(RWTBaseEffect *)shader vertices:(RWTVertex *)vertices vertexCount:(unsigned int)vertexCount;
 - (void)renderWithParentModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
