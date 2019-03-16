@@ -9,6 +9,7 @@
 #import "RWTVertex.h"
 #import "RWTBaseEffect.h"
 #import "RWTGlock.h"
+#import "RWTBackgroundQuad.h"
 
 @interface RWTViewController ()
 {
@@ -22,11 +23,14 @@
 @implementation RWTViewController {
     RWTBaseEffect *_shader;
     RWTGlock *_glock;
+    RWTBackgroundQuad *_background;
 }
 
 - (void)setupScene {
     _shader = [[RWTBaseEffect alloc] initWithVertexShader:@"RWTSimpleVertex.glsl" fragmentShader:@"RWTSimpleFragment.glsl"];
     _glock = [[RWTGlock alloc] initWithShader:_shader];
+    _background = [[RWTBackgroundQuad alloc] initWithShader:_shader];
+    [_background getScreenParams:self.view.bounds.size.height and:self.view.bounds.size.width];
     //_cube = [[RWTCube alloc] initWithShader:_shader];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
 }
@@ -71,12 +75,14 @@
     viewMatrix = GLKMatrix4Rotate(viewMatrix, GLKMathDegreesToRadians(0), 1, 1, 1);
     
     [_glock renderWithParentModelViewMatrix:viewMatrix];
+    [_background renderWithParentModelViewMatrix:viewMatrix];
     //[_cube renderWithParentModelViewMatrix:viewMatrix];
     
 }
 
 - (void)update {
     [_glock updateWithDelta:self.timeSinceLastUpdate];
+    [_background updateWithDelta:self.timeSinceLastUpdate];
     //[_cube updateWithDelta:self.timeSinceLastUpdate];
 }
 

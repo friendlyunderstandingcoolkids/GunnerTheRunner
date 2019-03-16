@@ -19,6 +19,7 @@
     GLuint _lightDirectionUniform;
     GLuint _matSpecularIntensityUniform;
     GLuint _shininessUniform;
+    GLuint TexCoordShiftLoc;
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
@@ -79,6 +80,7 @@
     _lightDirectionUniform = glGetUniformLocation(_programHandle, "u_Light.Direction");
     _matSpecularIntensityUniform = glGetUniformLocation(_programHandle, "u_MatSpecularIntensity");
     _shininessUniform = glGetUniformLocation(_programHandle, "u_Shininess");
+    TexCoordShiftLoc = glGetUniformLocation(_programHandle, "TexCoordShift");
     
     GLint linkSuccess;
     glGetProgramiv(_programHandle, GL_LINK_STATUS, &linkSuccess);
@@ -98,7 +100,10 @@
     
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, self.texture);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glUniform1i(_texUniform, 1);
+    
+    glUniform2f(TexCoordShiftLoc, -self.vertexInc, 0);
     
     glUniform3f(_lightColorUniform, 1, 1, 1);
     glUniform1f(_lightAmbientIntensityUniform, 0.1);

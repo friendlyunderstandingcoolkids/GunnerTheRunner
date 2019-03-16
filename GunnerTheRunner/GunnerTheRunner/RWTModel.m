@@ -27,7 +27,8 @@
         self.rotationX = 0;
         self.rotationY = 0;
         self.rotationZ = 0;
-        self.scale = 1.0;
+        self.scale = GLKVector3Make(0, 0, 0);
+        self.vertexInc = 0;
         
         glGenVertexArraysOES(1, &_vao);
         glBindVertexArrayOES(_vao);
@@ -35,7 +36,7 @@
         // Generate vertex buffer
         glGenBuffers(1, &_vertexBuffer);
         glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
-        glBufferData(GL_ARRAY_BUFFER, vertexCount * sizeof(RWTVertex), vertices, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, vertexCount * sizeof(RWTVertex), vertices, GL_DYNAMIC_DRAW);
         
         // Enable vertex attributes
         glEnableVertexAttribArray(RWTVertexAttribPosition);
@@ -61,7 +62,7 @@
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationX, 1, 0, 0);
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationY, 0, 1, 0);
     modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationZ, 0, 0, 1);
-    modelMatrix = GLKMatrix4Scale(modelMatrix, self.scale, self.scale, self.scale);
+    modelMatrix = GLKMatrix4Scale(modelMatrix, self.scale.x, self.scale.y, self.scale.z);
     return modelMatrix;
 }
 
@@ -70,6 +71,7 @@
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(parentModelViewMatrix, [self modelMatrix]);
     _shader.modelViewMatrix = modelViewMatrix;
     _shader.texture = self.texture;
+    _shader.vertexInc = self.vertexInc;
     [_shader prepareToDraw];
     
     glBindVertexArrayOES(_vao);
