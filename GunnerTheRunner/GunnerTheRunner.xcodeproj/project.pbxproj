@@ -20,6 +20,10 @@
 		A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED452221FD7A0042EB2A /* RWTGlock.m */; };
 		A472ED492221FE8A0042EB2A /* Glock19.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED482221FE8A0042EB2A /* Glock19.m */; };
 		A472ED4D2221FF390042EB2A /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = A472ED4C2221FF380042EB2A /* rainbow.png */; };
+		B7CD9A0F223DC63000012ACB /* CollisionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A0D223DC63000012ACB /* CollisionHandler.m */; };
+		B7CD9A12223DC64800012ACB /* mushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A11223DC64800012ACB /* mushroom.m */; };
+		B7CD9A15223DC64E00012ACB /* RWTMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A14223DC64E00012ACB /* RWTMushroom.m */; };
+		B7CD9A17223DC6EF00012ACB /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CD9A16223DC6EE00012ACB /* mushroom.png */; };
 		BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029352218BFEF006845C9 /* AppDelegate.m */; };
 		BBC029392218BFEF006845C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029382218BFEF006845C9 /* ViewController.m */; };
 		BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293A2218BFEF006845C9 /* Main.storyboard */; };
@@ -78,6 +82,13 @@
 		A472ED472221FE890042EB2A /* Glock19.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glock19.h; sourceTree = "<group>"; };
 		A472ED482221FE8A0042EB2A /* Glock19.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glock19.m; sourceTree = "<group>"; };
 		A472ED4C2221FF380042EB2A /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
+		B7CD9A0D223DC63000012ACB /* CollisionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHandler.m; sourceTree = "<group>"; };
+		B7CD9A0E223DC63000012ACB /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
+		B7CD9A10223DC64800012ACB /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
+		B7CD9A11223DC64800012ACB /* mushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mushroom.m; sourceTree = "<group>"; };
+		B7CD9A13223DC64E00012ACB /* RWTMushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTMushroom.h; sourceTree = "<group>"; };
+		B7CD9A14223DC64E00012ACB /* RWTMushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTMushroom.m; sourceTree = "<group>"; };
+		B7CD9A16223DC6EE00012ACB /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
 		BBC029312218BFEF006845C9 /* GunnerTheRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GunnerTheRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC029342218BFEF006845C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBC029352218BFEF006845C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -192,6 +203,13 @@
 				A472ED4C2221FF380042EB2A /* rainbow.png */,
 				A472ED442221FD7A0042EB2A /* RWTGlock.h */,
 				A472ED452221FD7A0042EB2A /* RWTGlock.m */,
+				B7CD9A0E223DC63000012ACB /* CollisionHandler.h */,
+				B7CD9A0D223DC63000012ACB /* CollisionHandler.m */,
+				B7CD9A10223DC64800012ACB /* mushroom.h */,
+				B7CD9A11223DC64800012ACB /* mushroom.m */,
+				B7CD9A13223DC64E00012ACB /* RWTMushroom.h */,
+				B7CD9A14223DC64E00012ACB /* RWTMushroom.m */,
+				B7CD9A16223DC6EE00012ACB /* mushroom.png */,
 			);
 			path = GunnerTheRunner;
 			sourceTree = "<group>";
@@ -317,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC0297D2218EF15006845C9 /* parallax-mountain-foreground-trees.png in Resources */,
+				B7CD9A17223DC6EF00012ACB /* mushroom.png in Resources */,
 				A472ED382221FBF80042EB2A /* RWTSimpleFragment.glsl in Resources */,
 				BBC029762218E845006845C9 /* bullets.png in Resources */,
 				BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */,
@@ -359,7 +378,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC029392218BFEF006845C9 /* ViewController.m in Sources */,
+				B7CD9A0F223DC63000012ACB /* CollisionHandler.m in Sources */,
 				A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */,
+				B7CD9A12223DC64800012ACB /* mushroom.m in Sources */,
 				BBC029442218BFF0006845C9 /* main.m in Sources */,
 				BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */,
 				A472ED492221FE8A0042EB2A /* Glock19.m in Sources */,
@@ -368,6 +389,7 @@
 				A472ED362221FBF80042EB2A /* RWTModel.m in Sources */,
 				12EF2D0B223DB1E300AACE97 /* RWTBackgroundQuad.m in Sources */,
 				12EF2D08223DB1DA00AACE97 /* BackgroundQuad.m in Sources */,
+				B7CD9A15223DC64E00012ACB /* RWTMushroom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

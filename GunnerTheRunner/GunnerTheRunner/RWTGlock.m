@@ -9,10 +9,13 @@
 #import "Glock19.h"
 
 BOOL makeGunJump = false;
-float gravity = -9.81;
-float startVelocity = 7;
+BOOL makeGunFastFall = false;
+BOOL rotateLeft = false;
+float gravity = -15;
+float startVelocity = 8;
 float Velocity;
 float yPosition = 0.1;
+
 @interface RWTGlock () {
     
 }
@@ -27,27 +30,47 @@ float yPosition = 0.1;
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
         self.scale = GLKVector3Make(0.22, 0.22, 0.22);
-        self.position = GLKVector3Make(-3, 0.1, 1.5);
+        self.position = GLKVector3Make(-4, -0.3, 1.5);
         self.rotationX -= M_PI/180 * 10;
         self.rotationY -= M_PI/180 * 8;
-        self.rotationZ = M_PI/180 * 90;
-        self.vertexInc = 0;
+        self.rotationZ = M_PI/180 * 100;
     }
     return self;
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
     if(makeGunJump == true){
-        if(yPosition > 0){
+        if(yPosition >= -0.4){
             yPosition += Velocity * dt + gravity * pow(dt, 2);
             Velocity = Velocity + gravity * dt;
-            self.position = GLKVector3Make(-3, yPosition, 1.5);
+            self.position = GLKVector3Make(-4, yPosition, 1.5);
         }
         else{
             makeGunJump = false;
+            makeGunFastFall = false;
             Velocity = startVelocity;
-            yPosition = 0.1;
+            yPosition = -0.3;
+            self.position = GLKVector3Make(-4, yPosition, 1.5);
         }
+    }
+    if(makeGunFastFall == true){
+        gravity = -50;
+    }
+    else{
+        gravity = -15;
+    }
+    
+    if(self.rotationX < M_PI/180 * 90+0.2 && rotateLeft == false){
+        self.rotationX += dt+dt;
+    }
+    else{
+        rotateLeft = true;
+    }
+    if(self.rotationX > M_PI/180 * 90-0.2 && rotateLeft == true){
+        self.rotationX -= dt+dt;
+    }
+    else{
+        rotateLeft = false;
     }
 }
 
@@ -57,9 +80,10 @@ float yPosition = 0.1;
     }
 }
 
-//-(void)fingerLocationX:(float)xPosition fingerLocationY:(float)yPosition{
-//    NSLog(@"%f",xPosition);
-//    NSLog(@"%f",yPosition);
-//    printf("-----------");
-//}
+- (void)dofastFall:(BOOL)fastFall{
+    if(makeGunJump == true){
+        makeGunFastFall = true;
+    }
+}
+
 @end
