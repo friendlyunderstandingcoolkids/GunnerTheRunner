@@ -12,6 +12,7 @@
 #import "RWTMushroom.h"
 #import "CollisionHandler.h"
 #import "RWTBackgroundQuad.h"
+#import "RWTKnife.h"
 
 @interface RWTViewController ()
 {
@@ -28,6 +29,8 @@
     RWTMushroom *_mush;
     RWTMushroom *_mush2;
     CollisionHandler *_collision;
+    RWTKnife *_knife;
+    NSMutableArray *knives;
 }
 
 - (void)setupScene {
@@ -40,8 +43,9 @@
     _mush = [_mush initWithShader:_shader];
     _mush2 = [_mush2 initWithShader:_shader];
     _collision = [[CollisionHandler alloc] init];
-    //_cube = [[RWTCube alloc] initWithShader:_shader];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
+    
+    knives = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidLoad
@@ -75,6 +79,7 @@
     doubleTapRecognizer.numberOfTouchesRequired = 1;
     //Add Gesture Recognizer to View
     [self.view addGestureRecognizer:doubleTapRecognizer];
+    
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -92,8 +97,15 @@
     [_background renderWithParentModelViewMatrix:viewMatrix];
     [_mush renderWithParentModelViewMatrix:viewMatrix];
     [_mush2 renderWithParentModelViewMatrix:viewMatrix];
-    //[_cube renderWithParentModelViewMatrix:viewMatrix];
     
+    for (NSInteger i=0; i < [knives count]; i++) {
+        [knives[i] renderWithParentModelViewMatrix:viewMatrix];
+        float posX = [knives[i] getXPosition];
+        float posY = [knives[i] getYPosition];
+        if (fabs(posX) >= 6.5 || fabs(posY >= 5)){
+            [knives removeObjectAtIndex:i];
+        }
+    }
 }
 
 - (void)update {
@@ -103,20 +115,61 @@
     [_mush2 updateWithDelta:self.timeSinceLastUpdate isMush2:true];
     [_collision mushroomDetection:(RWTMushroom *)_mush glockDetection:(RWTGlock *)_glock];
     [_collision mushroomDetection:(RWTMushroom *)_mush2 glockDetection:(RWTGlock *)_glock];
-    //[_cube updateWithDelta:self.timeSinceLastUpdate];
+    
+    for (RWTKnife *knifeToRender in knives) {
+        [knifeToRender updateWithDelta:self.timeSinceLastUpdate];
+    }
 }
 
 
 //responds to tap
 -(IBAction)tapResponder:(UITapGestureRecognizer *) recognizer
 {
-    [_glock doJump:(BOOL)isJump];
+    CGPoint pointToShoot = [recognizer locationInView:self.view];
+    NSLog(@"%s %f", "y pos", pointToShoot.y);
+    NSLog(@"%s %f", "x pos", pointToShoot.x);
+    if(pointToShoot.x <= 270) {
+        [_glock doJump:(BOOL)isJump];
+    }
+    else if([knives count] < 2 && pointToShoot.x >= 310 && ![_glock isJumping]) {
+        
+        CGPoint barrelPos = [_glock getBarrelPos];
+        NSLog(@"%s %f %f", "Barrel X and Y ", barrelPos.x, barrelPos.y);
+        
+        float adj = pointToShoot.x - barrelPos.x;
+        float opp = barrelPos.y - pointToShoot.y;
+        
+        NSLog(@"%s %f", "ADJ", adj);
+        NSLog(@"%s %f", "OPP", opp);
+        
+        
+        float hyp = 8.0f;
+        
+        NSLog(@"%s %f", "hyp ", hyp);
+        
+        float angle = atan(opp/adj);
+        
+        float velocityX = cosf(angle) * hyp;
+        float velocityY = sinf(angle) * hyp;
+        
+        NSLog(@"%s %f", "angle ", angle);
+        float angleDeg = angle * 100;
+        //float angleDeg = angle * 180 / M_PI;
+        
+        NSLog(@"%s", "");
+        
+        _knife = [[RWTKnife alloc] initWithShader:_shader velx:velocityX vely:velocityY];
+        [knives addObject: _knife];
+    }
 }
 
 //responds to doubleTap
 -(IBAction)doubleTapResponder:(UITapGestureRecognizer *) recognizer
 {
-    [_glock dofastFall:(BOOL)fastFall];
+    CGPoint pointToShoot = [recognizer locationInView:self.view];
+    if(pointToShoot.x <= 270) {
+        [_glock dofastFall:(BOOL)fastFall];
+    }
 }
 
 @end

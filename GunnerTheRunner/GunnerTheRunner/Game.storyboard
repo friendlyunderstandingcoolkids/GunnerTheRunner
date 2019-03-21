@@ -17,6 +17,7 @@
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="Ud5-Ef-E1J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="KA0-bL-3EO"/>
                         <connections>
                             <outlet property="delegate" destination="cty-dp-tOo" id="m2v-gq-2Iw"/>

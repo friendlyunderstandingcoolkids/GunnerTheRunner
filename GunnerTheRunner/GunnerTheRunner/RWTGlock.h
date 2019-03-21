@@ -12,4 +12,8 @@
 - (instancetype)initWithShader:(RWTBaseEffect *)shader;
 - (void)doJump:(BOOL)isJump;
 - (void)dofastFall:(BOOL)fastFall;
+- (CGPoint)getBarrelPos;
+- (float)getPositionX;
+- (float)getPositionY;
+- (BOOL)isJumping;
 @end
