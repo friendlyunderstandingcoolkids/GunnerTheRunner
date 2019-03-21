@@ -86,4 +86,21 @@ float yPosition = 0.1;
     }
 }
 
+- (BOOL)isJumping {
+    return makeGunJump;
+}
+
+- (CGPoint)getBarrelPos{
+    CGPoint barrelPos = CGPointMake(269, 261);
+    return barrelPos;
+}
+
+- (float)getPositionX {
+    return self.position.x;
+}
+
+- (float)getPositionY {
+    return self.position.y;
+}
+
 @end
