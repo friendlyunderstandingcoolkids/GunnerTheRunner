@@ -22,6 +22,10 @@
 		A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED352221FBF80042EB2A /* RWTViewController.m */; };
 		A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED452221FD7A0042EB2A /* RWTGlock.m */; };
 		A472ED492221FE8A0042EB2A /* Glock19.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED482221FE8A0042EB2A /* Glock19.m */; };
+		B7A3343C2244460E0051D02C /* bullet.obj in Resources */ = {isa = PBXBuildFile; fileRef = B7A334362244460D0051D02C /* bullet.obj */; };
+		B7A3343D2244460E0051D02C /* bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A334372244460D0051D02C /* bullet.m */; };
+		B7A3343E2244460E0051D02C /* RWTBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A334392244460D0051D02C /* RWTBullet.m */; };
+		B7A3343F2244460E0051D02C /* bullet.mtl in Resources */ = {isa = PBXBuildFile; fileRef = B7A3343B2244460E0051D02C /* bullet.mtl */; };
 		B7CD9A0F223DC63000012ACB /* CollisionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A0D223DC63000012ACB /* CollisionHandler.m */; };
 		B7CD9A12223DC64800012ACB /* mushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A11223DC64800012ACB /* mushroom.m */; };
 		B7CD9A15223DC64E00012ACB /* RWTMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A14223DC64E00012ACB /* RWTMushroom.m */; };
@@ -88,6 +92,12 @@
 		A472ED452221FD7A0042EB2A /* RWTGlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTGlock.m; sourceTree = "<group>"; };
 		A472ED472221FE890042EB2A /* Glock19.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glock19.h; sourceTree = "<group>"; };
 		A472ED482221FE8A0042EB2A /* Glock19.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glock19.m; sourceTree = "<group>"; };
+		B7A334362244460D0051D02C /* bullet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bullet.obj; sourceTree = "<group>"; };
+		B7A334372244460D0051D02C /* bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bullet.m; sourceTree = "<group>"; };
+		B7A334382244460D0051D02C /* bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bullet.h; sourceTree = "<group>"; };
+		B7A334392244460D0051D02C /* RWTBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBullet.m; sourceTree = "<group>"; };
+		B7A3343A2244460E0051D02C /* RWTBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBullet.h; sourceTree = "<group>"; };
+		B7A3343B2244460E0051D02C /* bullet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bullet.mtl; sourceTree = "<group>"; };
 		B7CD9A0D223DC63000012ACB /* CollisionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHandler.m; sourceTree = "<group>"; };
 		B7CD9A0E223DC63000012ACB /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
 		B7CD9A10223DC64800012ACB /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
@@ -220,6 +230,12 @@
 				A4587CAA2244307F002FC95A /* RWTKnife.h */,
 				A4587CAC2244307F002FC95A /* RWTKnife.m */,
 				A4587CB0224437FB002FC95A /* white.png */,
+				B7A334382244460D0051D02C /* bullet.h */,
+				B7A334372244460D0051D02C /* bullet.m */,
+				B7A3343B2244460E0051D02C /* bullet.mtl */,
+				B7A334362244460D0051D02C /* bullet.obj */,
+				B7A3343A2244460E0051D02C /* RWTBullet.h */,
+				B7A334392244460D0051D02C /* RWTBullet.m */,
 			);
 			path = GunnerTheRunner;
 			sourceTree = "<group>";
@@ -351,12 +367,14 @@
 				BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */,
 				A4587CB1224437FB002FC95A /* white.png in Resources */,
 				BBC0297C2218EF15006845C9 /* parallax-mountain-mountains.png in Resources */,
+				B7A3343C2244460E0051D02C /* bullet.obj in Resources */,
 				A472ED372221FBF80042EB2A /* Game.storyboard in Resources */,
 				BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */,
 				BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */,
 				A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */,
 				BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */,
 				BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */,
+				B7A3343F2244460E0051D02C /* bullet.mtl in Resources */,
 				12EF2D0F223DB5FE00AACE97 /* brass.png in Resources */,
 				BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */,
 				BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */,
@@ -392,12 +410,14 @@
 				A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */,
 				B7CD9A12223DC64800012ACB /* mushroom.m in Sources */,
 				BBC029442218BFF0006845C9 /* main.m in Sources */,
+				B7A3343E2244460E0051D02C /* RWTBullet.m in Sources */,
 				A4587CAF2244307F002FC95A /* betterknife.m in Sources */,
 				BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */,
 				A472ED492221FE8A0042EB2A /* Glock19.m in Sources */,
 				A472ED3C2221FBF80042EB2A /* RWTBaseEffect.m in Sources */,
 				A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */,
 				A472ED362221FBF80042EB2A /* RWTModel.m in Sources */,
+				B7A3343D2244460E0051D02C /* bullet.m in Sources */,
 				12EF2D0B223DB1E300AACE97 /* RWTBackgroundQuad.m in Sources */,
 				A4587CAE2244307F002FC95A /* RWTKnife.m in Sources */,
 				12EF2D08223DB1DA00AACE97 /* BackgroundQuad.m in Sources */,
