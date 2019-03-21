@@ -12,7 +12,7 @@ BOOL makeGunJump = false;
 BOOL makeGunFastFall = false;
 BOOL rotateLeft = false;
 float gravity = -15;
-float startVelocity = 8;
+float startVelocity = 10;
 float Velocity;
 float yPosition = 0.1;
 
@@ -40,9 +40,12 @@ float yPosition = 0.1;
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
     if(makeGunJump == true){
-        if(yPosition >= -0.4){
+        if(yPosition > -0.31){
             yPosition += Velocity * dt + gravity * pow(dt, 2);
             Velocity = Velocity + gravity * dt;
+            if(yPosition < -0.3){
+                yPosition = -0.35;
+            }
             self.position = GLKVector3Make(-4, yPosition, 1.5);
         }
         else{
@@ -54,7 +57,7 @@ float yPosition = 0.1;
         }
     }
     if(makeGunFastFall == true){
-        gravity = -50;
+        gravity = -100;
     }
     else{
         gravity = -15;
@@ -67,7 +70,7 @@ float yPosition = 0.1;
         rotateLeft = true;
     }
     if(self.rotationX > M_PI/180 * 90-0.2 && rotateLeft == true){
-        self.rotationX -= dt+dt;
+        self.rotationX -= (dt+dt);
     }
     else{
         rotateLeft = false;

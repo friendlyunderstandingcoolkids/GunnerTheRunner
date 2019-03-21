@@ -13,6 +13,7 @@
 #import "CollisionHandler.h"
 #import "RWTBackgroundQuad.h"
 #import "RWTKnife.h"
+#import "RWTBullet.h"
 
 @interface RWTViewController ()
 {
@@ -31,6 +32,7 @@
     CollisionHandler *_collision;
     RWTKnife *_knife;
     NSMutableArray *knives;
+    RWTBullet *_bullet;
 }
 
 - (void)setupScene {
@@ -38,10 +40,9 @@
     _glock = [[RWTGlock alloc] initWithShader:_shader];
     _background = [[RWTBackgroundQuad alloc] initWithShader:_shader];
     [_background getScreenParams:self.view.bounds.size.height and:self.view.bounds.size.width];
-    _mush = [RWTMushroom alloc];
-    _mush2 = [RWTMushroom alloc];
-    _mush = [_mush initWithShader:_shader];
-    _mush2 = [_mush2 initWithShader:_shader];
+    _mush = [[RWTMushroom alloc] initWithShader:_shader];
+    _mush2 = [[RWTMushroom alloc] initWithShader:_shader];
+    _bullet = [[RWTBullet alloc] initWithShader:_shader];
     _collision = [[CollisionHandler alloc] init];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
     
@@ -97,6 +98,7 @@
     [_background renderWithParentModelViewMatrix:viewMatrix];
     [_mush renderWithParentModelViewMatrix:viewMatrix];
     [_mush2 renderWithParentModelViewMatrix:viewMatrix];
+    [_bullet renderWithParentModelViewMatrix:viewMatrix];
     
     for (NSInteger i=0; i < [knives count]; i++) {
         [knives[i] renderWithParentModelViewMatrix:viewMatrix];
@@ -113,8 +115,10 @@
     [_background updateWithDelta:self.timeSinceLastUpdate];
     [_mush updateWithDelta:self.timeSinceLastUpdate isMush2:false];
     [_mush2 updateWithDelta:self.timeSinceLastUpdate isMush2:true];
+    [_bullet updateWithDelta:self.timeSinceLastUpdate];
     [_collision mushroomDetection:(RWTMushroom *)_mush glockDetection:(RWTGlock *)_glock];
     [_collision mushroomDetection:(RWTMushroom *)_mush2 glockDetection:(RWTGlock *)_glock];
+    [_collision bulletDetection:(RWTBullet *)_bullet glockDetection:(RWTGlock *)_glock];
     
     for (RWTKnife *knifeToRender in knives) {
         [knifeToRender updateWithDelta:self.timeSinceLastUpdate];

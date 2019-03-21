@@ -10,9 +10,7 @@
 
 float xPosition = 8;
 float xPosition2 = 8;
-float speed = 3;
-float OTP = 3;
-float OTP2 = 4;
+float speed = 6;
 @interface RWTMushroom () {
     
 }
@@ -35,28 +33,22 @@ float OTP2 = 4;
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt isMush2:(BOOL)isMush2 {
-
+    
     if(isMush2){
         if(xPosition < -10){
-            OTP = [self getRandomNumberBetween:2 to:5];
-            xPosition = 9;
+            xPosition = 12;
         }
-        xPosition -= dt * speed * OTP;
+        xPosition -= dt * speed;
         self.position = GLKVector3Make(xPosition, -1, 1.5);
     }
     else{
         if(xPosition2 < -10){
-            OTP2 = [self getRandomNumberBetween:2 to:5];
             xPosition2 = 9;
         }
-        xPosition2 -= dt * speed * OTP2;
+        xPosition2 -= dt * speed;
         self.position = GLKVector3Make(xPosition2, -1, 1.5);
     }
 }
 
--(int)getRandomNumberBetween:(int)from to:(int)to
-{
-    return (int)from + arc4random() % (to-from+1);
-}
 
 @end
