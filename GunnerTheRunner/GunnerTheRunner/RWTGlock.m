@@ -15,6 +15,10 @@ float gravity = -15;
 float startVelocity = 10;
 float Velocity;
 float yPosition = 0.1;
+float initXPos = 0;
+float initYPos = -0.3;
+float initZPos = 1.5;
+float screenWidth = 0;
 
 @interface RWTGlock () {
     
@@ -23,14 +27,20 @@ float yPosition = 0.1;
 
 @implementation RWTGlock
 
-- (instancetype)initWithShader:(RWTBaseEffect *)shader {
+- (instancetype)initWithShader:(RWTBaseEffect *)shader viewWidth:(CGFloat)viewWidth {
     Velocity = startVelocity;
     if ((self = [super initWithName:"glock" shader:shader vertices:(RWTVertex *)Cube_Material_Vertices vertexCount:sizeof(Cube_Material_Vertices)/sizeof(Cube_Material_Vertices[0])])) {
         [self loadTexture:@"brass.png"];
+        screenWidth = viewWidth;
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
         self.scale = GLKVector3Make(0.22, 0.22, 0.22);
-        self.position = GLKVector3Make(-4, -0.3, 1.5);
+        if(screenWidth == 1024){
+            initXPos = -2.3;
+        }else if(screenWidth == 896){
+            initXPos = -4;
+        }
+        self.position = GLKVector3Make(initXPos, initYPos, initZPos);
         self.rotationX -= M_PI/180 * 10;
         self.rotationY -= M_PI/180 * 8;
         self.rotationZ = M_PI/180 * 100;
@@ -46,14 +56,14 @@ float yPosition = 0.1;
             if(yPosition < -0.3){
                 yPosition = -0.35;
             }
-            self.position = GLKVector3Make(-4, yPosition, 1.5);
+            self.position = GLKVector3Make(initXPos, yPosition, initZPos);
         }
         else{
             makeGunJump = false;
             makeGunFastFall = false;
             Velocity = startVelocity;
             yPosition = -0.3;
-            self.position = GLKVector3Make(-4, yPosition, 1.5);
+            self.position = GLKVector3Make(initXPos, yPosition, initZPos);
         }
     }
     if(makeGunFastFall == true){
@@ -63,7 +73,7 @@ float yPosition = 0.1;
         gravity = -15;
     }
     
-    if(self.rotationX < M_PI/180 * 90+0.2 && rotateLeft == false){
+    /*if(self.rotationX < M_PI/180 * 90+0.2 && rotateLeft == false){
         self.rotationX += dt+dt;
     }
     else{
@@ -74,7 +84,7 @@ float yPosition = 0.1;
     }
     else{
         rotateLeft = false;
-    }
+    }*/
 }
 
 - (void)doJump:(BOOL)isJump{
@@ -94,7 +104,14 @@ float yPosition = 0.1;
 }
 
 - (CGPoint)getBarrelPos{
-    CGPoint barrelPos = CGPointMake(269, 261);
+    CGPoint barrelPos;
+    if(screenWidth == 1024){
+        barrelPos = CGPointMake(383, 471);
+    }else if (screenWidth == 896){
+        barrelPos = CGPointMake(269, 261);
+    }else{
+        barrelPos = CGPointMake(269, 261);
+    }
     return barrelPos;
 }
 

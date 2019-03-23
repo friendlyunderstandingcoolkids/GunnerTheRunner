@@ -9,7 +9,7 @@
 
 @interface RWTKnife : RWTModel
 
-- (instancetype)initWithShader:(RWTBaseEffect *)shader velx:(float)velx vely:(float)vely;
+- (instancetype)initWithShader:(RWTBaseEffect *)shader velx:(float)velx vely:(float)vely viewWidth:(CGFloat)viewWidth;
 - (void)updateWithDelta:(NSTimeInterval)dt;
 - (float) getXPosition;
 - (float) getYPosition;

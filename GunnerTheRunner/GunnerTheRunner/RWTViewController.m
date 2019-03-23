@@ -19,7 +19,8 @@
 {
     BOOL fastFall;
     BOOL isJump;
-
+    CGFloat viewWidth;
+    CGFloat viewHeight;
 }
 @end
 
@@ -36,8 +37,11 @@
 }
 
 - (void)setupScene {
+    viewWidth = self.view.bounds.size.width;
+    viewHeight = self.view.bounds.size.height;
+    
     _shader = [[RWTBaseEffect alloc] initWithVertexShader:@"RWTSimpleVertex.glsl" fragmentShader:@"RWTSimpleFragment.glsl"];
-    _glock = [[RWTGlock alloc] initWithShader:_shader];
+    _glock = [[RWTGlock alloc] initWithShader:_shader viewWidth:viewWidth];
     _background = [[RWTBackgroundQuad alloc] initWithShader:_shader];
     [_background getScreenParams:self.view.bounds.size.height and:self.view.bounds.size.width];
     _mush = [[RWTMushroom alloc] initWithShader:_shader];
@@ -80,7 +84,6 @@
     doubleTapRecognizer.numberOfTouchesRequired = 1;
     //Add Gesture Recognizer to View
     [self.view addGestureRecognizer:doubleTapRecognizer];
-    
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -146,7 +149,6 @@
         NSLog(@"%s %f", "ADJ", adj);
         NSLog(@"%s %f", "OPP", opp);
         
-        
         float hyp = 8.0f;
         
         NSLog(@"%s %f", "hyp ", hyp);
@@ -162,7 +164,7 @@
         
         NSLog(@"%s", "");
         
-        _knife = [[RWTKnife alloc] initWithShader:_shader velx:velocityX vely:velocityY];
+        _knife = [[RWTKnife alloc] initWithShader:_shader velx:velocityX vely:velocityY viewWidth:viewWidth];
         [knives addObject: _knife];
     }
 }
