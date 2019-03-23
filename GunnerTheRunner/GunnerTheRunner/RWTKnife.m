@@ -13,19 +13,28 @@ float yPosition;
 @interface RWTKnife () {
     float velX;
     float velY;
+    float initXPos;
+    float initYPos;
+    float initZPos;
 }
 @end
 
 @implementation RWTKnife
-- (instancetype)initWithShader:(RWTBaseEffect *)shader velx:(float)velx vely:(float)vely{
+- (instancetype)initWithShader:(RWTBaseEffect *)shader velx:(float)velx vely:(float)vely viewWidth:(CGFloat)viewWidth{
     velX = velx;
     velY = vely;
-    
+    initZPos = 1.5;
+    initYPos = 0.2;
     if ((self = [super initWithName:"knife" shader:shader vertices:(RWTVertex *)betterknife_Vertices vertexCount:sizeof(betterknife_Vertices)/sizeof(betterknife_Vertices[0])])) {
         [self loadTexture:@"brass.png"];
 //        self.scale = GLKVector3Make(0.35f, 0.35f, 0.35f);
         self.scale = GLKVector3Make(0.35f, 0.35f, 0.35f);
-        self.position = GLKVector3Make(-2.5, 0, 1.5);
+        if(viewWidth == 1024){
+            initXPos = -1.1;
+        }else if(viewWidth == 896){
+            initXPos = -2.5;
+        }
+        self.position = GLKVector3Make(initXPos, initYPos, initZPos);
         self.rotationY = 180 * M_PI/180;
         yPosition = self.position.y;
     }

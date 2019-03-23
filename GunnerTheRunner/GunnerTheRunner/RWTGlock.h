@@ -9,7 +9,7 @@
 
 @interface RWTGlock : RWTModel
 
-- (instancetype)initWithShader:(RWTBaseEffect *)shader;
+- (instancetype)initWithShader:(RWTBaseEffect *)shader viewWidth:(CGFloat)viewWidth;
 - (void)doJump:(BOOL)isJump;
 - (void)dofastFall:(BOOL)fastFall;
 - (CGPoint)getBarrelPos;

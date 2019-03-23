@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="landscape">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,49 +15,49 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-mountain-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Shr-Uv-P4P">
-                                <rect key="frame" x="0.0" y="-77" width="896" height="491"/>
+                                <rect key="frame" x="0.0" y="-77" width="292" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Shr-Uv-P4P" secondAttribute="height" multiplier="896:491" id="elz-9T-8Zt"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-mountain-montain-far.png" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-Va-0mA">
-                                <rect key="frame" x="-150" y="-150" width="1280" height="720"/>
+                                <rect key="frame" x="-150" y="-150" width="1408" height="389"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-mountain-mountains.png" translatesAutoresizingMaskIntoConstraints="NO" id="8mB-oV-70v">
-                                <rect key="frame" x="-150" y="-100" width="1280" height="720"/>
+                                <rect key="frame" x="-150" y="-100" width="1408" height="389"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-mountain-trees.png" translatesAutoresizingMaskIntoConstraints="NO" id="TMy-h6-jX3">
-                                <rect key="frame" x="-150" y="-200" width="1280" height="720"/>
+                                <rect key="frame" x="-150" y="-200" width="1408" height="389"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="highVelocityCutlery.png" translatesAutoresizingMaskIntoConstraints="NO" id="01D-8A-rcj">
-                                <rect key="frame" x="83" y="0.0" width="221" height="176"/>
+                                <rect key="frame" x="83" y="0.0" width="256" height="326"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coollogo_com-8202986rotated2 (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="yhY-q0-H1m">
-                                <rect key="frame" x="56" y="0.0" width="351" height="162"/>
+                                <rect key="frame" x="56" y="0.0" width="404" height="301"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Anywhere to Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru7-FC-nFT">
-                                <rect key="frame" x="363" y="197" width="170" height="21"/>
+                                <rect key="frame" x="363" y="197" width="298" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="G19_Gen4-107rot (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-0Z-NQ0">
-                                <rect key="frame" x="552" y="189" width="287" height="267"/>
+                                <rect key="frame" x="636" y="336" width="331" height="474"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bullets.png" translatesAutoresizingMaskIntoConstraints="NO" id="J4u-gO-fBh">
-                                <rect key="frame" x="40" y="240" width="306" height="237"/>
+                                <rect key="frame" x="40" y="418" width="352" height="413"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallax-mountain-foreground-trees.png" translatesAutoresizingMaskIntoConstraints="NO" id="N4s-XM-eP3">
-                                <rect key="frame" x="-150" y="-200" width="1280" height="720"/>
+                                <rect key="frame" x="-150" y="-200" width="1408" height="389"/>
                                 <gestureRecognizers/>
                             </imageView>
                         </subviews>

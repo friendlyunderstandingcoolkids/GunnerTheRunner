@@ -17,6 +17,7 @@
     IBOutlet UIImageView *gun;
     IBOutlet UIImageView *title;
     IBOutlet UIImageView *knife;
+    NSUserDefaults *_prefs;
 }
 @end
 
@@ -49,6 +50,29 @@
     } else {
         NSLog(@"No gyroscope on device.");
     }
+    
+    _prefs = [NSUserDefaults standardUserDefaults];
+    if([_prefs objectForKey:@"highscores"] == nil) {
+        NSMutableArray *highscores = [NSMutableArray array];
+        for (NSInteger i = 0; i < 5; i++){
+            [highscores addObject:[NSNumber numberWithInteger:i+1]];
+        }
+        
+        [_prefs setObject:highscores forKey:@"highscores"];
+        [_prefs synchronize];
+    }
+    
+    //COMPARING AND ADDING HIGHSCORE
+    NSMutableArray *scores = [_prefs objectForKey:@"highscores"];
+    NSNumber *newScore = [NSNumber numberWithInteger:10];
+    scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
+    NSLog(@"%@", scores);
+    NSLog (@"The integer is: %@", [scores objectAtIndex:0]);
+    if([scores objectAtIndex:0] < newScore){
+        [scores replaceObjectAtIndex:0 withObject:newScore];
+    }
+    scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
+    NSLog(@"%@", scores);
 }
 
 - (void) gyroDetec:(NSTimer *)timer
