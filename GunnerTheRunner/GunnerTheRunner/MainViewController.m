@@ -5,10 +5,10 @@
 //  Created by Dylan Chew on 2019-02-16.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "sfxPlayer.h"
 
-@interface ViewController () {
+@interface MainViewController () {
     IBOutlet UIImageView *bg1;
     IBOutlet UIImageView *bg2;
     IBOutlet UIImageView *bg3;
@@ -19,15 +19,19 @@
     IBOutlet UIImageView *title;
     IBOutlet UIImageView *knife;
     NSUserDefaults *_prefs;
+    __weak IBOutlet UIButton *highscoreButton;
+    __weak IBOutlet UIButton *howButton;
     
     sfxPlayer *fx;
 }
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    highscoreButton.layer.cornerRadius = 10;
+    howButton.layer.cornerRadius = 10;
     // Do any additional setup after loading the view, typically from a nib.
     //[NSTimer scheduledTimerWithTimeInterval:1.0f
       //                               target:self selector:@selector(gyroDetec:) userInfo:nil repeats:YES];
@@ -95,5 +99,12 @@
     [self presentViewController:vc animated:YES completion:NULL];
     [fx startGameMusic];
 
+}
+
+- (IBAction)highscoreScreen:(UIButton *)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Highscore" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"HSViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 @end
