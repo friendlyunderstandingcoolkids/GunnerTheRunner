@@ -183,7 +183,6 @@
         if([scores objectAtIndex:0] < newScore){
             [scores replaceObjectAtIndex:0 withObject:newScore];
         }
-        scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
         [_prefs setObject:scores forKey:@"highscores"];
         [_prefs synchronize];
         [self swapScene];
@@ -232,7 +231,7 @@
 
 - (void)swapScene {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController"];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:NO completion:NULL];
 }

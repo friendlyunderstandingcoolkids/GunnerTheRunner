@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface ViewController : UIViewController {
+@interface MainViewController : UIViewController {
     CMMotionManager *motionManager;
     NSOperationQueue *opQ;
 }
