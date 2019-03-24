@@ -14,6 +14,7 @@
 #import "RWTBackgroundQuad.h"
 #import "RWTKnife.h"
 #import "RWTBullet.h"
+#import "sfxPlayer.h"
 
 @interface RWTViewController ()
 {
@@ -34,6 +35,7 @@
     NSMutableArray *knives;
     NSMutableArray *mushrooms;
     NSMutableArray *bullets;
+    sfxPlayer *fx;
     int score;
 }
 
@@ -64,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    fx = [[sfxPlayer alloc] init];
     isJump = true;
     fastFall = true;
     GLKView *view = (GLKView *)self.view;
@@ -164,6 +167,7 @@
         [mushrooms[h] updateWithDelta:self.timeSinceLastUpdate];
         if([_collision mushroomDetection:mushrooms[h] glockDetection:_glock]){
             [mushrooms removeObjectAtIndex:h];
+            [fx oof];
         };
     }
     
@@ -172,6 +176,7 @@
         if([_collision bulletDetection:(RWTBullet *)bullets[s] glockDetection:(RWTGlock *)_glock]){
 //            NSLog(@"hit");
             [bullets removeObjectAtIndex:s];
+            [fx oof];
         };
     }
 }
@@ -214,6 +219,7 @@
         
         _knife = [[RWTKnife alloc] initWithShader:_shader velx:velocityX vely:velocityY viewWidth:viewWidth];
         [knives addObject: _knife];
+        [fx knifeThrowFX];
     }
 }
 

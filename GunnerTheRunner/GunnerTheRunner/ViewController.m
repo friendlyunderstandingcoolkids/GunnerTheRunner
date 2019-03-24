@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "sfxPlayer.h"
 
 @interface ViewController () {
     IBOutlet UIImageView *bg1;
@@ -18,6 +19,8 @@
     IBOutlet UIImageView *title;
     IBOutlet UIImageView *knife;
     NSUserDefaults *_prefs;
+    
+    sfxPlayer *fx;
 }
 @end
 
@@ -29,6 +32,8 @@
     //[NSTimer scheduledTimerWithTimeInterval:1.0f
       //                               target:self selector:@selector(gyroDetec:) userInfo:nil repeats:YES];
     
+    fx = [[sfxPlayer alloc] init];
+    [fx startMenuMusic];
     motionManager = [[CMMotionManager alloc] init];
     if (motionManager.gyroAvailable) {
         motionManager.gyroUpdateInterval = 1.0/60.0;
@@ -101,6 +106,7 @@
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"RWTViewController"];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:YES completion:NULL];
+    [fx startGameMusic];
 
 }
 @end
