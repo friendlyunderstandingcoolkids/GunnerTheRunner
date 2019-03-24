@@ -41,6 +41,9 @@
 //    self.rotationX += M_PI * dt;
 //    self.rotationY += M_PI * dt;
     self.vertexInc += 0.005;
+    if (self.vertexInc > 0.335){
+        self.vertexInc = 0.0;
+    }
 }
 
 - (void)getScreenParams:(float)height and: (float)width{

@@ -14,6 +14,11 @@ float bulletOTP = 3;
 float bulletTypeOTP = 1;
 float bulletInitialYPosition = 4;
 float bulletYPosition = 4;
+int spawnedPosX;
+int spawnedPosY;
+float xpos;
+float ypos;
+int type;
 
 @implementation RWTBullet
 - (instancetype)initWithShader:(RWTBaseEffect *)shader {
@@ -22,79 +27,114 @@ float bulletYPosition = 4;
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
         self.scale = GLKVector3Make(0.3, 0.3, 0.3);
-        self.position = GLKVector3Make(8, 1, 1.5);
+        self.position = GLKVector3Make(12, 1, 1.5);
         //self.rotationX = 50;
         self.rotationY += M_PI/2;
-//        self.rotationZ = M_PI/180 * 40;
+        //        self.rotationZ = M_PI/180 * 40;
+        spawnedPosX = [self getRandomNumberBetween:8 to:12];
+        xpos = spawnedPosX;
+        spawnedPosY = [self getRandomNumberBetween:0 to:3];
+        ypos = spawnedPosX;
+        type = [self getRandomNumberBetween:1 to:2];
     }
     return self;
 }
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
-    if(bulletxPosition < -10){
-        bulletTypeOTP = [self getRandomNumberBetween:0 to:3];
-        bulletOTP = [self getRandomNumberBetween:3 to:5];
-        bulletxPosition = 9;
-        bulletInitialYPosition = [self getRandomNumberBetween:2 to:4];
-        if(bulletInitialYPosition > 3){
-            if(bulletOTP == 5){
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.3;
-            }
-            else if(bulletOTP == 4){
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.4;
-            }
-            else{
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.5;
-            }
+    
+    xpos -= dt*10;
+    ypos -= dt*2;
+    
+    if(type == 1){
+        if(self.position.x < -10){
+            spawnedPosX = [self getRandomNumberBetween:8 to:12];
+            spawnedPosY = [self getRandomNumberBetween:0 to:2];
+            self.position = GLKVector3Make(spawnedPosX, spawnedPosY, 1.5);
+            xpos = spawnedPosX;
+            type = [self getRandomNumberBetween:1 to:2];
         }
         else{
-            if(bulletOTP == 5){
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.3;
-            }
-            else if(bulletOTP == 4){
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.2;
-
-            }
-            else{
-                self.rotationY = M_PI;
-                self.rotationX = M_PI_2;
-                self.rotationY += M_PI/2 + 0.1;
-            }
+            self.position = GLKVector3Make(xpos, spawnedPosY, 1.5);
         }
-        bulletYPosition = bulletInitialYPosition;
-
     }
-    if(bulletTypeOTP <= 1){
-        self.rotationY = M_PI;
-        self.rotationX = M_PI_2;
-        self.rotationY += M_PI/2;
-        bulletxPosition -= dt * bulletSpeed * bulletOTP;
-        self.position = GLKVector3Make(bulletxPosition,0.3, 1.5);
-    }
-    else{
-        if(bulletInitialYPosition < 3){
-            bulletxPosition -= dt * bulletSpeed * bulletOTP;
-            bulletYPosition -= dt;
-            self.position = GLKVector3Make(bulletxPosition,bulletYPosition, 1.5);
+    else {
+        if(self.position.x < -10){
+            spawnedPosX = [self getRandomNumberBetween:8 to:12];
+            spawnedPosY = [self getRandomNumberBetween:1 to:2];
+            self.position = GLKVector3Make(spawnedPosX, spawnedPosY, 1.5);
+            xpos = spawnedPosX;
+            ypos = spawnedPosY;
+            type = [self getRandomNumberBetween:1 to:2];
         }
         else{
-            bulletxPosition -= dt * bulletSpeed * bulletOTP;
-            bulletYPosition -= dt * 2.5;
-            self.position = GLKVector3Make(bulletxPosition,bulletYPosition, 1.5);
+            self.position = GLKVector3Make(xpos, ypos, 1.5);
         }
-
     }
-
+    
+//    if(bulletxPosition < -10){
+//        bulletTypeOTP = [self getRandomNumberBetween:0 to:3];
+//        bulletOTP = [self getRandomNumberBetween:3 to:5];
+//        bulletxPosition = 9;
+//        bulletInitialYPosition = [self getRandomNumberBetween:2 to:4];
+//        if(bulletInitialYPosition > 3){
+//            if(bulletOTP == 5){
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.3;
+//            }
+//            else if(bulletOTP == 4){
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.4;
+//            }
+//            else{
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.5;
+//            }
+//        }
+//        else{
+//            if(bulletOTP == 5){
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.3;
+//            }
+//            else if(bulletOTP == 4){
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.2;
+//
+//            }
+//            else{
+//                self.rotationY = M_PI;
+//                self.rotationX = M_PI_2;
+//                self.rotationY += M_PI/2 + 0.1;
+//            }
+//        }
+//        bulletYPosition = bulletInitialYPosition;
+//
+//    }
+//    if(bulletTypeOTP <= 1){
+//        self.rotationY = M_PI;
+//        self.rotationX = M_PI_2;
+//        self.rotationY += M_PI/2;
+//        bulletxPosition -= dt * bulletSpeed * bulletOTP;
+//        self.position = GLKVector3Make(bulletxPosition,0.3, 1.5);
+//    }
+//    else{
+//        if(bulletInitialYPosition < 3){
+//            bulletxPosition -= dt * bulletSpeed * bulletOTP;
+//            bulletYPosition -= dt;
+//            self.position = GLKVector3Make(bulletxPosition,bulletYPosition, 1.5);
+//        }
+//        else{
+//            bulletxPosition -= dt * bulletSpeed * bulletOTP;
+//            bulletYPosition -= dt * 2.5;
+//            self.position = GLKVector3Make(bulletxPosition,bulletYPosition, 1.5);
+//        }
+//
+//    }
+    
 }
 
 -(int)getRandomNumberBetween:(int)from to:(int)to

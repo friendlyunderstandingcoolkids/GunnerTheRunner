@@ -12,7 +12,8 @@ float xPosition = 8;
 float xPosition2 = 8;
 float speed = 6;
 @interface RWTMushroom () {
-    
+    int spawnedPos;
+    float xpos;
 }
 @end
 
@@ -24,31 +25,39 @@ float speed = 6;
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
         self.scale = GLKVector3Make(0.22, 0.22, 0.22);
-        self.position = GLKVector3Make(8, -1, 1.5);
+        self.position = GLKVector3Make(12, -1, 1.5);
         self.rotationX -= M_PI/180 * 20;
         self.rotationY -= M_PI/180 * 10;
         self.rotationZ = M_PI/180 * 40;
+        spawnedPos = [self getRandomNumberBetween:8 to:12];
+        xpos = spawnedPos;
     }
     return self;
 }
 
-- (void)updateWithDelta:(NSTimeInterval)dt isMush2:(BOOL)isMush2 {
+- (void)updateWithDelta:(NSTimeInterval)dt {
     
-    if(isMush2){
-        if(xPosition < -10){
-            xPosition = 12;
-        }
-        xPosition -= dt * speed;
-        self.position = GLKVector3Make(xPosition, -1, 1.5);
+    xpos -= dt*speed;
+    if(self.position.x < -10){
+        spawnedPos = [self getRandomNumberBetween:8 to:12];
+        self.position = GLKVector3Make(spawnedPos, -1, 1.5);
+        xpos = spawnedPos;
     }
     else{
-        if(xPosition2 < -10){
-            xPosition2 = 9;
-        }
-        xPosition2 -= dt * speed;
-        self.position = GLKVector3Make(xPosition2, -1, 1.5);
+        self.position = GLKVector3Make(xpos, -1, 1.5);
     }
 }
 
+- (void)setRandomPosition:(int)position {
+    spawnedPos = position;
+}
+- (float)getMushPosition {
+    return spawnedPos;
+}
+
+-(int)getRandomNumberBetween:(int)from to:(int)to
+{
+    return (int)from + arc4random() % (to-from+1);
+}
 
 @end

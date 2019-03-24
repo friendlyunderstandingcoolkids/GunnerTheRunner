@@ -10,5 +10,7 @@
 @interface RWTMushroom : RWTModel
 
 - (instancetype)initWithShader:(RWTBaseEffect *)shader;
-- (void)updateWithDelta:(NSTimeInterval)dt isMush2:(BOOL)isMush2;
+- (void)updateWithDelta:(NSTimeInterval)dt;
+- (void)setRandomPosition:(int)position;
+- (float)getMushPosition;
 @end
