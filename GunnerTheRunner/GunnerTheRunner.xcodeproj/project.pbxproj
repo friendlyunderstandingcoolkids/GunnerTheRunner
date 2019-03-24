@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1222DEDC22472D24001059CD /* RedHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1222DEDA22472D23001059CD /* RedHeart.png */; };
+		1222DEDD22472D24001059CD /* KnifeAmmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1222DEDB22472D24001059CD /* KnifeAmmo.png */; };
 		12EF2D08223DB1DA00AACE97 /* BackgroundQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EF2D06223DB1DA00AACE97 /* BackgroundQuad.m */; };
 		12EF2D0B223DB1E300AACE97 /* RWTBackgroundQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EF2D09223DB1E300AACE97 /* RWTBackgroundQuad.m */; };
 		12EF2D0D223DB1EB00AACE97 /* forestBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EF2D0C223DB1EA00AACE97 /* forestBG.png */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1222DEDA22472D23001059CD /* RedHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedHeart.png; sourceTree = "<group>"; };
+		1222DEDB22472D24001059CD /* KnifeAmmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KnifeAmmo.png; sourceTree = "<group>"; };
 		12EF2D06223DB1DA00AACE97 /* BackgroundQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundQuad.m; sourceTree = "<group>"; };
 		12EF2D07223DB1DA00AACE97 /* BackgroundQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundQuad.h; sourceTree = "<group>"; };
 		12EF2D09223DB1E300AACE97 /* RWTBackgroundQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBackgroundQuad.m; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 		BBC029332218BFEF006845C9 /* GunnerTheRunner */ = {
 			isa = PBXGroup;
 			children = (
+				1222DEDB22472D24001059CD /* KnifeAmmo.png */,
+				1222DEDA22472D23001059CD /* RedHeart.png */,
 				12EF2D0E223DB5FE00AACE97 /* brass.png */,
 				12EF2D0C223DB1EA00AACE97 /* forestBG.png */,
 				12EF2D0A223DB1E300AACE97 /* RWTBackgroundQuad.h */,
@@ -414,7 +420,9 @@
 				BB998A982247195B00FF044C /* shoot.mp3 in Resources */,
 				12EF2D0F223DB5FE00AACE97 /* brass.png in Resources */,
 				BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */,
+				1222DEDD22472D24001059CD /* KnifeAmmo.png in Resources */,
 				BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */,
+				1222DEDC22472D24001059CD /* RedHeart.png in Resources */,
 				BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */,
 				12EF2D0D223DB1EB00AACE97 /* forestBG.png in Resources */,
 				BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */,
@@ -633,7 +641,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CHCN72FCLW;
+				DEVELOPMENT_TEAM = 76JD2FD5FV;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -641,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner69;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner08;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,7 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CHCN72FCLW;
+				DEVELOPMENT_TEAM = 76JD2FD5FV;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -660,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner69;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner08;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

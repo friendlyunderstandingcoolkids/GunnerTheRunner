@@ -23,6 +23,12 @@
     CGFloat viewWidth;
     CGFloat viewHeight;
     __weak IBOutlet UILabel *onScreenScore;
+    __weak IBOutlet UIImageView *heart1;
+    __weak IBOutlet UIImageView *heart2;
+    __weak IBOutlet UIImageView *heart3;
+    __weak IBOutlet UIImageView *Ammo1;
+    __weak IBOutlet UIImageView *Ammo2;
+    NSUserDefaults *_prefs;
 }
 @end
 
@@ -37,6 +43,7 @@
     NSMutableArray *bullets;
     sfxPlayer *fx;
     int score;
+    int health;
 }
 
 - (void)setupScene {
@@ -61,6 +68,8 @@
     
     RWTBullet *bullet = [[RWTBullet alloc] initWithShader:_shader];
     [bullets addObject:bullet];
+    
+    health = 3;
 }
 
 - (void)viewDidLoad
@@ -134,7 +143,7 @@
     for(int m=0;m<[bullets count];m++){
         [bullets[m] renderWithParentModelViewMatrix:viewMatrix];
     }
-    
+    _prefs = [NSUserDefaults standardUserDefaults];
 }
 
 - (void)update {
@@ -142,6 +151,43 @@
     onScreenScore.text = [NSString stringWithFormat:@"Score: %d", score];
     [_glock updateWithDelta:self.timeSinceLastUpdate];
     [_background updateWithDelta:self.timeSinceLastUpdate];
+    
+//    NSLog(@"%lu", (unsigned long)[knives count]);
+    if ([knives count] == 2){
+        Ammo2.hidden = true;
+        Ammo1.hidden = true;
+    }
+    else if ([knives count] == 1){
+        Ammo1.hidden = false;
+        Ammo2.hidden = true;
+    }
+    else{
+        Ammo2.hidden = false;
+        Ammo1.hidden = false;
+    }
+    
+    
+    if(health < 3){
+        heart1.hidden = true;
+    }
+    if(health < 2){
+        heart2.hidden = true;
+    }
+    if(health < 1){
+        heart3.hidden = true;
+        
+        //COMPARING AND ADDING HIGHSCORE
+        NSMutableArray *scores = [_prefs objectForKey:@"highscores"];
+        NSNumber *newScore = [NSNumber numberWithInteger:score];
+        scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
+        if([scores objectAtIndex:0] < newScore){
+            [scores replaceObjectAtIndex:0 withObject:newScore];
+        }
+        scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
+        [_prefs setObject:scores forKey:@"highscores"];
+        [_prefs synchronize];
+        [self swapScene];
+    }
     
     
     for (int i=0;i<[knives count];i++) {
@@ -167,6 +213,7 @@
         [mushrooms[h] updateWithDelta:self.timeSinceLastUpdate];
         if([_collision mushroomDetection:mushrooms[h] glockDetection:_glock]){
             [mushrooms removeObjectAtIndex:h];
+            health -= 1;
             [fx oof];
         };
     }
@@ -176,11 +223,19 @@
         if([_collision bulletDetection:(RWTBullet *)bullets[s] glockDetection:(RWTGlock *)_glock]){
 //            NSLog(@"hit");
             [bullets removeObjectAtIndex:s];
+            health -= 1;
             [fx oof];
         };
     }
 }
 
+
+- (void)swapScene {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:NO completion:NULL];
+}
 
 //responds to tap
 -(IBAction)tapResponder:(UITapGestureRecognizer *) recognizer
