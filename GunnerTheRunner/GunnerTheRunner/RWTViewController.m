@@ -21,6 +21,7 @@
     BOOL isJump;
     CGFloat viewWidth;
     CGFloat viewHeight;
+    __weak IBOutlet UILabel *onScreenScore;
 }
 @end
 
@@ -28,12 +29,12 @@
     RWTBaseEffect *_shader;
     RWTGlock *_glock;
     RWTBackgroundQuad *_background;
-    RWTMushroom *_mush;
-    RWTMushroom *_mush2;
     CollisionHandler *_collision;
     RWTKnife *_knife;
     NSMutableArray *knives;
-    RWTBullet *_bullet;
+    NSMutableArray *mushrooms;
+    NSMutableArray *bullets;
+    int score;
 }
 
 - (void)setupScene {
@@ -44,13 +45,20 @@
     _glock = [[RWTGlock alloc] initWithShader:_shader viewWidth:viewWidth];
     _background = [[RWTBackgroundQuad alloc] initWithShader:_shader];
     [_background getScreenParams:self.view.bounds.size.height and:self.view.bounds.size.width];
-    _mush = [[RWTMushroom alloc] initWithShader:_shader];
-    _mush2 = [[RWTMushroom alloc] initWithShader:_shader];
-    _bullet = [[RWTBullet alloc] initWithShader:_shader];
     _collision = [[CollisionHandler alloc] init];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
     
     knives = [[NSMutableArray alloc] init];
+    mushrooms = [[NSMutableArray alloc] init];
+    bullets = [[NSMutableArray alloc] init];
+    
+    for(int k=0;k<2;k++){
+        RWTMushroom *mush = [[RWTMushroom alloc] initWithShader:_shader];
+        [mushrooms addObject:mush];
+    }
+    
+    RWTBullet *bullet = [[RWTBullet alloc] initWithShader:_shader];
+    [bullets addObject:bullet];
 }
 
 - (void)viewDidLoad
@@ -99,9 +107,6 @@
     
     [_glock renderWithParentModelViewMatrix:viewMatrix];
     [_background renderWithParentModelViewMatrix:viewMatrix];
-    [_mush renderWithParentModelViewMatrix:viewMatrix];
-    [_mush2 renderWithParentModelViewMatrix:viewMatrix];
-    [_bullet renderWithParentModelViewMatrix:viewMatrix];
     
     for (NSInteger i=0; i < [knives count]; i++) {
         [knives[i] renderWithParentModelViewMatrix:viewMatrix];
@@ -111,20 +116,63 @@
             [knives removeObjectAtIndex:i];
         }
     }
+    if([mushrooms count] < 2){
+        RWTMushroom *mush = [[RWTMushroom alloc] initWithShader:_shader];
+        [mushrooms addObject:mush];
+    }
+    for(int j=0;j<[mushrooms count];j++){
+        [mushrooms[j] renderWithParentModelViewMatrix:viewMatrix];
+    }
+    
+    if([bullets count] < 1){
+        RWTBullet *bullet = [[RWTBullet alloc] initWithShader:_shader];
+        [bullets addObject:bullet];
+    }
+    for(int m=0;m<[bullets count];m++){
+        [bullets[m] renderWithParentModelViewMatrix:viewMatrix];
+    }
+    
 }
 
 - (void)update {
+    score += 1;
+    onScreenScore.text = [NSString stringWithFormat:@"Score: %d", score];
     [_glock updateWithDelta:self.timeSinceLastUpdate];
     [_background updateWithDelta:self.timeSinceLastUpdate];
-    [_mush updateWithDelta:self.timeSinceLastUpdate isMush2:false];
-    [_mush2 updateWithDelta:self.timeSinceLastUpdate isMush2:true];
-    [_bullet updateWithDelta:self.timeSinceLastUpdate];
-    [_collision mushroomDetection:(RWTMushroom *)_mush glockDetection:(RWTGlock *)_glock];
-    [_collision mushroomDetection:(RWTMushroom *)_mush2 glockDetection:(RWTGlock *)_glock];
-    [_collision bulletDetection:(RWTBullet *)_bullet glockDetection:(RWTGlock *)_glock];
     
-    for (RWTKnife *knifeToRender in knives) {
-        [knifeToRender updateWithDelta:self.timeSinceLastUpdate];
+    
+    for (int i=0;i<[knives count];i++) {
+        [knives[i] updateWithDelta:self.timeSinceLastUpdate];
+        BOOL hit = false;
+        BOOL hit2 = false;
+        //for (int x = 0; x < [mushrooms count]; x++) {
+        //    hit = [_collision knifeDetection:(RWTKnife *)knives[i] mushDetection:(RWTMushroom *)mushrooms[x]];
+        //}
+        for (int y = 0; y < [bullets count]; y++) {
+            hit2 = [_collision knifeDetection:(RWTKnife *)knives[i] bulletDetection:(RWTBullet *)bullets[y]];
+            if(hit2) {
+                [bullets removeObjectAtIndex:y];
+                score += 100;
+            }
+        }
+        if(hit || hit2) {
+            [knives removeObjectAtIndex:i];
+        }
+    }
+    
+    for (int h=0;h<[mushrooms count];h++) {
+        [mushrooms[h] updateWithDelta:self.timeSinceLastUpdate];
+        if([_collision mushroomDetection:mushrooms[h] glockDetection:_glock]){
+            [mushrooms removeObjectAtIndex:h];
+        };
+    }
+    
+    for (int s=0;s<[bullets count];s++) {
+        [bullets[s] updateWithDelta:self.timeSinceLastUpdate];
+        if([_collision bulletDetection:(RWTBullet *)bullets[s] glockDetection:(RWTGlock *)_glock]){
+//            NSLog(@"hit");
+            [bullets removeObjectAtIndex:s];
+        };
     }
 }
 
@@ -159,7 +207,7 @@
         float velocityY = sinf(angle) * hyp;
         
         NSLog(@"%s %f", "angle ", angle);
-        float angleDeg = angle * 100;
+//        float angleDeg = angle * 100;
         //float angleDeg = angle * 180 / M_PI;
         
         NSLog(@"%s", "");

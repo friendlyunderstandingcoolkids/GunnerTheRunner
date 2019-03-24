@@ -73,7 +73,7 @@ float screenWidth = 0;
         gravity = -15;
     }
     
-    /*if(self.rotationX < M_PI/180 * 90+0.2 && rotateLeft == false){
+    if(self.rotationX < M_PI/180 * 90+0.2 && rotateLeft == false){
         self.rotationX += dt+dt;
     }
     else{
@@ -84,7 +84,7 @@ float screenWidth = 0;
     }
     else{
         rotateLeft = false;
-    }*/
+    }
 }
 
 - (void)doJump:(BOOL)isJump{

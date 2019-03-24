@@ -9,6 +9,7 @@
 #import "RWTGlock.h"
 #import "RWTMushroom.h"
 #import "RWTBullet.h"
+#import "RWTKnife.h"
 
 //Values for Glock
 float GxBoundsTop = 1;
@@ -33,7 +34,7 @@ float GbBboxLeft;
 
 //Values for Mushroom
 float MxBounds = 0.8f;
-float MyBounds = 0.8f;
+float MyBounds = 1;
 
 float MBboxTop;
 float MBboxRight;
@@ -50,10 +51,20 @@ float BBboxTop;
 float BBboxRight;
 float BBboxBot;
 float BBboxLeft;
+
+//Values for Knife
+float Kbounds = 0.5f;
+float kBBoxTop;
+float kBBoxRight;
+float kBBoxBot;
+float kBBoxLeft;
+
 @interface CollisionHandler ()
 {
     BOOL didMushroomHitGlock;
     BOOL didBulletHitGlock;
+    BOOL didKnifeHitBullet;
+    BOOL didKnifeHitMush;
 }
 @end
 @implementation CollisionHandler{
@@ -64,6 +75,7 @@ float BBboxLeft;
 
 - (BOOL)mushroomDetection:(RWTMushroom *)mushroom glockDetection:(RWTGlock *)glock{
     
+    didMushroomHitGlock = false;
     GtBboxTop = glock.position.y + GyOffsetTop + GyBoundsTop;
     GtBboxBot = glock.position.y + GyOffsetTop - GyBoundsTop;
     GtBboxRight = glock.position.x + GxOffsetTop + GxBoundsTop;
@@ -89,6 +101,7 @@ float BBboxLeft;
 
 - (BOOL)bulletDetection:(RWTBullet *)bullet glockDetection:(RWTGlock *)glock{
     
+    didBulletHitGlock = false;
     GtBboxTop = glock.position.y + GyOffsetTop + GyBoundsTop;
     GtBboxBot = glock.position.y + GyOffsetTop - GyBoundsTop;
     GtBboxRight = glock.position.x + GxOffsetTop + GxBoundsTop;
@@ -116,6 +129,49 @@ float BBboxLeft;
     
     return didBulletHitGlock;
 }
+
+- (BOOL)knifeDetection:(RWTKnife *)knife bulletDetection:(RWTBullet *)bullet {
+    didKnifeHitBullet = false;
+    
+    BBboxTop = bullet.position.y + ByBounds;
+    BBboxBot = bullet.position.y - ByBounds;
+    BBboxRight = bullet.position.x + BxBounds;
+    BBboxLeft = bullet.position.x - BxBounds;
+    
+    kBBoxTop = knife.position.y + Kbounds;
+    kBBoxRight = knife.position.x + Kbounds;
+    kBBoxBot = knife.position.y - Kbounds;
+    kBBoxLeft = knife.position.x -  Kbounds;
+    
+    if(((kBBoxBot <= BBboxTop && kBBoxBot >= BBboxBot) || (kBBoxTop <= BBboxTop && kBBoxTop >= BBboxBot)) && ((kBBoxLeft >= BBboxLeft && kBBoxLeft <= BBboxRight) || (kBBoxRight >= BBboxLeft && kBBoxRight <= BBboxRight))){
+        printf("knifeHitBullet");
+        didKnifeHitBullet = true;
+    }
+    
+    return didKnifeHitBullet;
+}
+
+- (BOOL)knifeDetection:(RWTKnife *)knife mushDetection:(RWTMushroom *)mushroom {
+    didKnifeHitMush = false;
+    
+    MBboxTop = mushroom.position.y + MyBounds;
+    MBboxBot = mushroom.position.y - MyBounds;
+    MBboxRight = mushroom.position.x + MxBounds;
+    MBboxLeft = mushroom.position.x - MxBounds;
+    
+    kBBoxTop = knife.position.y + Kbounds;
+    kBBoxRight = knife.position.x + Kbounds;
+    kBBoxBot = knife.position.y - Kbounds;
+    kBBoxLeft = knife.position.x -  Kbounds;
+    
+    if(((kBBoxBot <= MBboxTop && kBBoxBot >= MBboxBot) || (kBBoxTop <= MBboxTop && kBBoxTop >= MBboxBot)) && ((kBBoxLeft >= MBboxLeft && kBBoxLeft <= MBboxRight) || (kBBoxRight >= MBboxLeft && kBBoxRight <= MBboxRight))){
+        printf("knifeHitMush");
+        didKnifeHitMush = true;
+    }
+    
+    return didKnifeHitMush;
+}
+
 @end
 //1. function to recieve two objects (both of which are different objects to be collided with eachother)
 //2. function must be accesible by the view contrller
