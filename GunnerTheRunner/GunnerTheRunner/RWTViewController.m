@@ -76,6 +76,7 @@
 {
     [super viewDidLoad];
     fx = [[sfxPlayer alloc] init];
+    
     isJump = true;
     fastFall = true;
     GLKView *view = (GLKView *)self.view;
@@ -199,6 +200,7 @@
         for (int y = 0; y < [bullets count]; y++) {
             hit2 = [_collision knifeDetection:(RWTKnife *)knives[i] bulletDetection:(RWTBullet *)bullets[y]];
             if(hit2) {
+                [fx oof2];
                 [bullets removeObjectAtIndex:y];
                 score += 100;
             }
@@ -243,6 +245,7 @@
     NSLog(@"%s %f", "y pos", pointToShoot.y);
     NSLog(@"%s %f", "x pos", pointToShoot.x);
     if(pointToShoot.x <= 270) {
+        [fx jump];
         [_glock doJump:(BOOL)isJump];
     }
     else if([knives count] < 2 && pointToShoot.x >= 310 && ![_glock isJumping]) {

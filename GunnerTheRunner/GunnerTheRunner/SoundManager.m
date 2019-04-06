@@ -115,7 +115,7 @@ NSString *const SoundDidFinishPlayingNotification = @"SoundDidFinishPlayingNotif
     if ((self = [super init]))
     {
         _URL = URL;
-        _baseVolume = 1.0f;
+        _baseVolume = 2.0f;
         
 #if SM_USE_AV_AUDIO_PLAYER
         _sound = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:NULL];
