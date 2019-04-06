@@ -60,6 +60,8 @@
 		BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */; };
 		BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC0297A2218EF15006845C9 /* parallax-mountain-trees.png */; };
 		BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */; };
+		BBC5C2C82259442900AC00D9 /* oof2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBC5C2C72259442900AC00D9 /* oof2.mp3 */; };
+		BBC5C2CA2259447D00AC00D9 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBC5C2C92259447D00AC00D9 /* jump.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,8 @@
 		BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-montain-far.png"; sourceTree = "<group>"; };
 		BBC0297A2218EF15006845C9 /* parallax-mountain-trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-trees.png"; sourceTree = "<group>"; };
 		BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parallax-mountain-bg.png"; sourceTree = "<group>"; };
+		BBC5C2C72259442900AC00D9 /* oof2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oof2.mp3; sourceTree = "<group>"; };
+		BBC5C2C92259447D00AC00D9 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,8 @@
 				BB998A902247195B00FF044C /* mainMenu.mp3 */,
 				BB998A922247195B00FF044C /* shoot.mp3 */,
 				BB998A9F22471AAE00FF044C /* oof.mp3 */,
+				BBC5C2C72259442900AC00D9 /* oof2.mp3 */,
+				BBC5C2C92259447D00AC00D9 /* jump.mp3 */,
 			);
 			path = GunnerTheRunner;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 				A472ED372221FBF80042EB2A /* Game.storyboard in Resources */,
 				BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */,
 				BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */,
+				BBC5C2CA2259447D00AC00D9 /* jump.mp3 in Resources */,
 				A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */,
 				BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */,
 				BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */,
@@ -433,6 +440,7 @@
 				BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */,
 				12EF2D0D223DB1EB00AACE97 /* forestBG.png in Resources */,
 				A45BE37022473439006B1072 /* Highscore.storyboard in Resources */,
+				BBC5C2C82259442900AC00D9 /* oof2.mp3 in Resources */,
 				BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */,
 				A45BE369224733EB006B1072 /* Main.storyboard in Resources */,
 				BB998A972247195B00FF044C /* gameStart.mp3 in Resources */,

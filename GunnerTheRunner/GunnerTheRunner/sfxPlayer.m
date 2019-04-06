@@ -40,4 +40,12 @@
     [self setup];
     [[SoundManager sharedManager]playSound:@"oof.mp3" looping:NO];
 }
+- (void) oof2 {
+    [self setup];
+    [[SoundManager sharedManager]playSound:@"oof2.mp3" looping:NO];
+}
+- (void) jump {
+    [self setup];
+    [[SoundManager sharedManager]playSound:@"jump.mpr" looping:NO];
+}
 @end
