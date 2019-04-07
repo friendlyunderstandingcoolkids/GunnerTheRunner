@@ -11,6 +11,5 @@
 
 - (instancetype)initWithShader:(RWTBaseEffect *)shader;
 - (void)updateWithDelta:(NSTimeInterval)dt;
-- (void)setRandomPosition:(int)position;
-- (float)getMushPosition;
+- (void)setRandomPosition;
 @end

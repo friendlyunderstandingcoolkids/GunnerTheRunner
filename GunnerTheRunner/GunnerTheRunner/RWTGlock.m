@@ -16,7 +16,7 @@ float startVelocity = 10;
 float Velocity;
 float yPosition = 0.1;
 float initXPos = 0;
-float initYPos = -0.3;
+float initYPos = -0.6;
 float initZPos = 1.5;
 float screenWidth = 0;
 
@@ -30,15 +30,17 @@ float screenWidth = 0;
 - (instancetype)initWithShader:(RWTBaseEffect *)shader viewWidth:(CGFloat)viewWidth {
     Velocity = startVelocity;
     if ((self = [super initWithName:"glock" shader:shader vertices:(RWTVertex *)Cube_Material_Vertices vertexCount:sizeof(Cube_Material_Vertices)/sizeof(Cube_Material_Vertices[0])])) {
-        [self loadTexture:@"brass.png"];
+        [self loadTexture:@"gunout.png"];
         screenWidth = viewWidth;
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
-        self.scale = GLKVector3Make(0.22, 0.22, 0.22);
+        self.scale = GLKVector3Make(0.11, 0.11, 0.11);
         if(screenWidth == 1024){
-            initXPos = -2.3;
+            initXPos = -2.8;
         }else if(screenWidth == 896){
-            initXPos = -4;
+            initXPos = -4.8;
+        }else{
+            initXPos = -3.5;
         }
         self.position = GLKVector3Make(initXPos, initYPos, initZPos);
         self.rotationX -= M_PI/180 * 10;
@@ -50,11 +52,11 @@ float screenWidth = 0;
 
 - (void)updateWithDelta:(NSTimeInterval)dt {
     if(makeGunJump == true){
-        if(yPosition > -0.31){
+        if(yPosition > -0.61){
             yPosition += Velocity * dt + gravity * pow(dt, 2);
             Velocity = Velocity + gravity * dt;
-            if(yPosition < -0.3){
-                yPosition = -0.35;
+            if(yPosition <= -0.59){
+                yPosition = -0.61;
             }
             self.position = GLKVector3Make(initXPos, yPosition, initZPos);
         }
@@ -62,7 +64,7 @@ float screenWidth = 0;
             makeGunJump = false;
             makeGunFastFall = false;
             Velocity = startVelocity;
-            yPosition = -0.3;
+            yPosition = -0.6;
             self.position = GLKVector3Make(initXPos, yPosition, initZPos);
         }
     }
@@ -106,11 +108,11 @@ float screenWidth = 0;
 - (CGPoint)getBarrelPos{
     CGPoint barrelPos;
     if(screenWidth == 1024){
-        barrelPos = CGPointMake(383, 471);
+        barrelPos = CGPointMake(247, 541);
     }else if (screenWidth == 896){
-        barrelPos = CGPointMake(269, 261);
+        barrelPos = CGPointMake(189, 292);
     }else{
-        barrelPos = CGPointMake(269, 261);
+        barrelPos = CGPointMake(135, 218);
     }
     return barrelPos;
 }

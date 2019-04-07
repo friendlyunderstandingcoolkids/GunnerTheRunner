@@ -61,6 +61,7 @@
     }
     
     _prefs = [NSUserDefaults standardUserDefaults];
+    //[_prefs removeObjectForKey:@"highscores"];
     if([_prefs objectForKey:@"highscores"] == nil) {
         NSMutableArray *highscores = [NSMutableArray array];
         for (NSInteger i = 0; i < 5; i++){
@@ -104,6 +105,13 @@
 - (IBAction)highscoreScreen:(UIButton *)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Highscore" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"HSViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:NULL];
+}
+
+- (IBAction)howScreen:(UIButton *)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"HowToPlay" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"HowViewController"];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:YES completion:NULL];
 }

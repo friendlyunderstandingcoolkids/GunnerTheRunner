@@ -15,6 +15,7 @@
 #import "RWTKnife.h"
 #import "RWTBullet.h"
 #import "sfxPlayer.h"
+#import "RWTSpike.h"
 
 @interface RWTViewController ()
 {
@@ -38,38 +39,50 @@
     RWTBackgroundQuad *_background;
     CollisionHandler *_collision;
     RWTKnife *_knife;
+    RWTMushroom *_mushroom;
+    
     NSMutableArray *knives;
-    NSMutableArray *mushrooms;
+    NSMutableArray *spikes;
     NSMutableArray *bullets;
     sfxPlayer *fx;
     int score;
     int health;
+    int enemyCount;
+    NSUInteger lastScore;
 }
 
 - (void)setupScene {
     viewWidth = self.view.bounds.size.width;
     viewHeight = self.view.bounds.size.height;
-    
+    NSLog(@"%f", viewHeight);
+    NSLog(@"%f", viewWidth);
     _shader = [[RWTBaseEffect alloc] initWithVertexShader:@"RWTSimpleVertex.glsl" fragmentShader:@"RWTSimpleFragment.glsl"];
     _glock = [[RWTGlock alloc] initWithShader:_shader viewWidth:viewWidth];
+    _mushroom = [[RWTMushroom alloc] initWithShader:_shader];
     _background = [[RWTBackgroundQuad alloc] initWithShader:_shader];
     [_background getScreenParams:self.view.bounds.size.height and:self.view.bounds.size.width];
     _collision = [[CollisionHandler alloc] init];
     _shader.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.bounds.size.width / self.view.bounds.size.height, 1, 150);
     
     knives = [[NSMutableArray alloc] init];
-    mushrooms = [[NSMutableArray alloc] init];
+    
+    /*_knife = [[RWTKnife alloc] initWithShader:_shader velx:0 vely:0 viewWidth:viewWidth];
+    [knives addObject:_knife];*/
+    
+    spikes = [[NSMutableArray alloc] init];
     bullets = [[NSMutableArray alloc] init];
     
-    for(int k=0;k<2;k++){
-        RWTMushroom *mush = [[RWTMushroom alloc] initWithShader:_shader];
-        [mushrooms addObject:mush];
+    for(int k=0;k<1;k++){
+        RWTSpike *_spike = [[RWTSpike alloc] initWithShader:_shader];
+        [spikes addObject:_spike];
     }
     
     RWTBullet *bullet = [[RWTBullet alloc] initWithShader:_shader];
     [bullets addObject:bullet];
     
     health = 3;
+    lastScore = 0;
+    enemyCount = 0;
 }
 
 - (void)viewDidLoad
@@ -119,7 +132,7 @@
     
     [_glock renderWithParentModelViewMatrix:viewMatrix];
     [_background renderWithParentModelViewMatrix:viewMatrix];
-    
+    [_mushroom renderWithParentModelViewMatrix:viewMatrix];
     for (NSInteger i=0; i < [knives count]; i++) {
         [knives[i] renderWithParentModelViewMatrix:viewMatrix];
         float posX = [knives[i] getXPosition];
@@ -128,12 +141,12 @@
             [knives removeObjectAtIndex:i];
         }
     }
-    if([mushrooms count] < 2){
-        RWTMushroom *mush = [[RWTMushroom alloc] initWithShader:_shader];
-        [mushrooms addObject:mush];
+    if([spikes count] < 1){
+        RWTSpike *spike = [[RWTSpike alloc] initWithShader:_shader];
+        [spikes addObject:spike];
     }
-    for(int j=0;j<[mushrooms count];j++){
-        [mushrooms[j] renderWithParentModelViewMatrix:viewMatrix];
+    for(int j=0;j<[spikes count];j++){
+        [spikes[j] renderWithParentModelViewMatrix:viewMatrix];
     }
     
     if([bullets count] < 1){
@@ -150,8 +163,15 @@
     score += 1;
     onScreenScore.text = [NSString stringWithFormat:@"Score: %d", score];
     [_glock updateWithDelta:self.timeSinceLastUpdate];
+    [_mushroom updateWithDelta:self.timeSinceLastUpdate];
     [_background updateWithDelta:self.timeSinceLastUpdate];
-    
+    if([_collision mushroomDetection:(RWTMushroom *)_mushroom glockDetection:(RWTGlock *)_glock]){
+        if(health < 3){
+            health += 1;
+        }
+        [_mushroom setRandomPosition];
+        NSLog(@"%i", health);
+    }
 //    NSLog(@"%lu", (unsigned long)[knives count]);
     if ([knives count] == 2){
         Ammo2.hidden = true;
@@ -166,7 +186,12 @@
         Ammo1.hidden = false;
     }
     
-    
+    if(health > 2){
+        heart1.hidden = false;
+    }
+    if(health > 1){
+        heart2.hidden = false;
+    }
     if(health < 3){
         heart1.hidden = true;
     }
@@ -175,16 +200,19 @@
     }
     if(health < 1){
         heart3.hidden = true;
-        
-        //COMPARING AND ADDING HIGHSCORE
-        NSMutableArray *scores = [_prefs objectForKey:@"highscores"];
-        NSNumber *newScore = [NSNumber numberWithInteger:score];
-        scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
-        if([scores objectAtIndex:0] < newScore){
-            [scores replaceObjectAtIndex:0 withObject:newScore];
-        }
-        [_prefs setObject:scores forKey:@"highscores"];
+        lastScore = (NSInteger) score;
+        [_prefs setInteger:enemyCount forKey:@"enemycount"];
+        [_prefs setInteger:lastScore forKey:@"lastscore"];
         [_prefs synchronize];
+//        //COMPARING AND ADDING HIGHSCORE
+//        NSMutableArray *scores = [_prefs objectForKey:@"highscores"];
+//        NSNumber *newScore = [NSNumber numberWithInteger:score];
+//        scores = [NSMutableArray arrayWithArray:[scores sortedArrayUsingSelector: @selector(compare:)]];
+//        if([scores objectAtIndex:0] < newScore){
+//            [scores replaceObjectAtIndex:0 withObject:newScore];
+//        }
+//        [_prefs setObject:scores forKey:@"highscores"];
+//        [_prefs synchronize];
         [self swapScene];
     }
     
@@ -199,8 +227,10 @@
         for (int y = 0; y < [bullets count]; y++) {
             hit2 = [_collision knifeDetection:(RWTKnife *)knives[i] bulletDetection:(RWTBullet *)bullets[y]];
             if(hit2) {
+                [fx oof2];
                 [bullets removeObjectAtIndex:y];
                 score += 100;
+                enemyCount += 1;
             }
         }
         if(hit || hit2) {
@@ -208,10 +238,10 @@
         }
     }
     
-    for (int h=0;h<[mushrooms count];h++) {
-        [mushrooms[h] updateWithDelta:self.timeSinceLastUpdate];
-        if([_collision mushroomDetection:mushrooms[h] glockDetection:_glock]){
-            [mushrooms removeObjectAtIndex:h];
+    for (int h=0;h<[spikes count];h++) {
+        [spikes[h] updateWithDelta:self.timeSinceLastUpdate];
+        if([_collision spikeDetection:spikes[h] glockDetection:(RWTGlock *)_glock]){
+            [spikes removeObjectAtIndex:h];
             health -= 1;
             [fx oof];
         };
@@ -230,8 +260,8 @@
 
 
 - (void)swapScene {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"GameOver" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"GameOverBoard"];
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:NO completion:NULL];
 }
@@ -239,15 +269,16 @@
 //responds to tap
 -(IBAction)tapResponder:(UITapGestureRecognizer *) recognizer
 {
+    CGPoint barrelPos = [_glock getBarrelPos];
     CGPoint pointToShoot = [recognizer locationInView:self.view];
     NSLog(@"%s %f", "y pos", pointToShoot.y);
     NSLog(@"%s %f", "x pos", pointToShoot.x);
-    if(pointToShoot.x <= 270) {
+    if(pointToShoot.x <= barrelPos.x) {
         [_glock doJump:(BOOL)isJump];
+        [fx jump];
     }
-    else if([knives count] < 2 && pointToShoot.x >= 310 && ![_glock isJumping]) {
+    else if([knives count] < 2 && pointToShoot.x > barrelPos.x && ![_glock isJumping]) {
         
-        CGPoint barrelPos = [_glock getBarrelPos];
         NSLog(@"%s %f %f", "Barrel X and Y ", barrelPos.x, barrelPos.y);
         
         float adj = pointToShoot.x - barrelPos.x;

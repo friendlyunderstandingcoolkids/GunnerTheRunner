@@ -24,15 +24,15 @@ float yPosition;
     velX = velx;
     velY = vely;
     initZPos = 1.5;
-    initYPos = 0.2;
+    initYPos = -0.3;
     if ((self = [super initWithName:"knife" shader:shader vertices:(RWTVertex *)betterknife_Vertices vertexCount:sizeof(betterknife_Vertices)/sizeof(betterknife_Vertices[0])])) {
-        [self loadTexture:@"brass.png"];
+        [self loadTexture:@"grey.png"];
 //        self.scale = GLKVector3Make(0.35f, 0.35f, 0.35f);
-        self.scale = GLKVector3Make(0.35f, 0.35f, 0.35f);
+        self.scale = GLKVector3Make(0.25f, 0.25f, 0.25f);
         if(viewWidth == 1024){
-            initXPos = -1.1;
+            initXPos = -2.1;
         }else if(viewWidth == 896){
-            initXPos = -2.5;
+            initXPos = -4.0;
         }
         self.position = GLKVector3Make(initXPos, initYPos, initZPos);
         self.rotationY = 180 * M_PI/180;
@@ -46,6 +46,7 @@ float yPosition;
     
     self.position = GLKVector3Make(self.position.x + velX * dt, self.position.y + velY * dt, self.position.z);
     self.rotationZ += M_PI * 5 *dt;
+    
 //    NSLog(@"%f", self.position.x);
     /*float finalX = ((finalPos.x / (viewWidth/2) - 1) * self.scale);
     float finalY = ((finalPos.y / (viewHeight/2) - 0.5) * -2) * self.scale;

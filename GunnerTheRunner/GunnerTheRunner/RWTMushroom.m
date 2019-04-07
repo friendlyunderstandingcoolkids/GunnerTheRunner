@@ -24,11 +24,8 @@ float speed = 6;
         [self loadTexture:@"mushroom.png"];
         self.rotationY = M_PI;
         self.rotationX = M_PI_2;
-        self.scale = GLKVector3Make(0.22, 0.22, 0.22);
-        self.position = GLKVector3Make(12, -1, 1.5);
-        self.rotationX -= M_PI/180 * 20;
-        self.rotationY -= M_PI/180 * 10;
-        self.rotationZ = M_PI/180 * 40;
+        self.scale = GLKVector3Make(0.11, 0.11, 0.11);
+        self.position = GLKVector3Make(12, 2, 1.5);
         spawnedPos = [self getRandomNumberBetween:8 to:12];
         xpos = spawnedPos;
     }
@@ -39,21 +36,21 @@ float speed = 6;
     
     xpos -= dt*speed;
     if(self.position.x < -10){
-        spawnedPos = [self getRandomNumberBetween:8 to:12];
-        self.position = GLKVector3Make(spawnedPos, -1, 1.5);
+        spawnedPos = [self getRandomNumberBetween:8 to:10];
+        self.position = GLKVector3Make(spawnedPos, 2, 1.5);
         xpos = spawnedPos;
     }
     else{
-        self.position = GLKVector3Make(xpos, -1, 1.5);
+        self.position = GLKVector3Make(xpos, 2, 1.5);
     }
 }
 
-- (void)setRandomPosition:(int)position {
-    spawnedPos = position;
+- (void)setRandomPosition{
+    spawnedPos = [self getRandomNumberBetween:8 to:10];
+    self.position = GLKVector3Make(spawnedPos, 2, 1.5);
+    xpos = spawnedPos;
 }
-- (float)getMushPosition {
-    return spawnedPos;
-}
+
 
 -(int)getRandomNumberBetween:(int)from to:(int)to
 {

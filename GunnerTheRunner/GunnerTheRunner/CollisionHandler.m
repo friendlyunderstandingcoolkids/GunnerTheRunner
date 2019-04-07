@@ -10,17 +10,18 @@
 #import "RWTMushroom.h"
 #import "RWTBullet.h"
 #import "RWTKnife.h"
+#import "RWTSpike.h"
 
 //Values for Glock
-float GxBoundsTop = 1;
-float GyBoundsTop = 0.1f;
-float GxOffsetTop = -0.3;
-float GyOffsetTop = 0.1f;
+float GxBoundsTop = 1.0f / 2.0f;
+float GyBoundsTop = 0.1f / 2.0f;
+float GxOffsetTop = -0.3f / 2.0f;
+float GyOffsetTop = 0.1f / 2.0f;
 
-float GxBoundsBot = 0.2f;
-float GyBoundsBot = 0.5f;
-float GxOffsetBot = -0.2f;
-float GyOffsetBot = -0.1f;
+float GxBoundsBot = 0.2f / 2.0f;
+float GyBoundsBot = 0.5f / 2.0f;
+float GxOffsetBot = -0.2f / 2.0f;
+float GyOffsetBot = -0.1f / 2.0f;
 
 float GtBboxTop;
 float GtBboxRight;
@@ -33,19 +34,26 @@ float GbBboxBot;
 float GbBboxLeft;
 
 //Values for Mushroom
-float MxBounds = 0.8f;
-float MyBounds = 1;
+float MxBounds = 0.8f / 2.0f;
+float MyBounds = 1.0f / 2.0f;
 
 float MBboxTop;
 float MBboxRight;
 float MBboxBot;
 float MBboxLeft;
 
+//Values for Spike
+float SxBounds = 0.8f;
+float SyBounds = 1;
+
+float SBboxTop;
+float SBboxRight;
+float SBboxBot;
+float SBboxLeft;
 
 //Values for Bullet
-//Values for Mushroom
-float BxBounds = 0.8f;
-float ByBounds = 0.8f;
+float BxBounds = 1.0f;
+float ByBounds = 0.3f;
 
 float BBboxTop;
 float BBboxRight;
@@ -65,12 +73,14 @@ float kBBoxLeft;
     BOOL didBulletHitGlock;
     BOOL didKnifeHitBullet;
     BOOL didKnifeHitMush;
+    BOOL didSpikeHitGlock;
 }
 @end
 @implementation CollisionHandler{
     RWTGlock *_glock;
     RWTMushroom *_mush;
     RWTMushroom *_bullet;
+    
 }
 
 - (BOOL)mushroomDetection:(RWTMushroom *)mushroom glockDetection:(RWTGlock *)glock{
@@ -97,6 +107,32 @@ float kBBoxLeft;
     }
     
     return didMushroomHitGlock;
+}
+
+- (BOOL)spikeDetection:(RWTSpike *)spike glockDetection:(RWTGlock *)glock{
+    
+    didSpikeHitGlock = false;
+    GtBboxTop = glock.position.y + GyOffsetTop + GyBoundsTop;
+    GtBboxBot = glock.position.y + GyOffsetTop - GyBoundsTop;
+    GtBboxRight = glock.position.x + GxOffsetTop + GxBoundsTop;
+    GtBboxLeft = glock.position.x + GxOffsetTop - GxBoundsTop;
+    
+    GbBboxTop = glock.position.y + GyOffsetBot + GyBoundsBot;
+    GbBboxBot = glock.position.y + GyOffsetBot - GyBoundsBot;
+    GbBboxRight = glock.position.x + GxOffsetBot + GxBoundsBot;
+    GbBboxLeft = glock.position.x + GxOffsetBot - GxBoundsBot;
+    
+    SBboxTop = spike.position.y + SyBounds;
+    SBboxBot = spike.position.y - SyBounds;
+    SBboxRight = spike.position.x + SxBounds;
+    SBboxLeft = spike.position.x - SxBounds;
+    //MBboxLeft >= GbBboxRight &&
+    if(((GbBboxBot <= SBboxTop && GbBboxBot >= SBboxBot) || (GbBboxTop <= SBboxTop && GbBboxTop >= SBboxBot)) && ((GbBboxLeft >= SBboxLeft && GbBboxLeft <= SBboxRight) || (GbBboxRight >= SBboxLeft && GbBboxRight <= SBboxRight))){
+        //printf("hit");
+        didSpikeHitGlock = true;
+    }
+    
+    return didSpikeHitGlock;
 }
 
 - (BOOL)bulletDetection:(RWTBullet *)bullet glockDetection:(RWTGlock *)glock{
@@ -130,6 +166,7 @@ float kBBoxLeft;
     return didBulletHitGlock;
 }
 
+
 - (BOOL)knifeDetection:(RWTKnife *)knife bulletDetection:(RWTBullet *)bullet {
     didKnifeHitBullet = false;
     
@@ -143,7 +180,11 @@ float kBBoxLeft;
     kBBoxBot = knife.position.y - Kbounds;
     kBBoxLeft = knife.position.x -  Kbounds;
     
-    if(((kBBoxBot <= BBboxTop && kBBoxBot >= BBboxBot) || (kBBoxTop <= BBboxTop && kBBoxTop >= BBboxBot)) && ((kBBoxLeft >= BBboxLeft && kBBoxLeft <= BBboxRight) || (kBBoxRight >= BBboxLeft && kBBoxRight <= BBboxRight))){
+//    if(((kBBoxBot <= BBboxTop && kBBoxBot >= BBboxBot) || (kBBoxTop <= BBboxTop && kBBoxTop >= BBboxBot)) && ((kBBoxLeft >= BBboxLeft && kBBoxLeft <= BBboxRight) || (kBBoxRight >= BBboxLeft && kBBoxRight <= BBboxRight))){
+    float tempx = ABS(knife.position.x - bullet.position.x);
+    float tempy = ABS(knife.position.y - bullet.position.y);
+    float hyp = sqrtf(powf(tempx, 2) + powf(tempy, 2));
+    if(hyp <= 0.5f) {
         printf("knifeHitBullet");
         didKnifeHitBullet = true;
     }

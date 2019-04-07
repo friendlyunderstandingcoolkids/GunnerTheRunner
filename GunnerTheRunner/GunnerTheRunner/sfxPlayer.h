@@ -17,5 +17,6 @@
 - (void) gameStartFX;
 - (void) knifeThrowFX;
 - (void) oof;
-
+- (void) oof2;
+- (void) jump;
 @end
