@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GLKit View Controller-->
+        <scene sceneID="uvI-RR-8LU">
+            <objects>
+                <glkViewController storyboardIdentifier="RWTViewController" preferredFramesPerSecond="30" id="cty-dp-tOo" customClass="RWTViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="Ud5-Ef-E1J">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayN-14-lCg">
+                                <rect key="frame" x="335" y="47" width="418" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="4P0-tC-DG8">
+                                <rect key="frame" x="70" y="30" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="VF4-GQ-Alu">
+                                <rect key="frame" x="153" y="30" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jr-LT-NW6">
+                                <rect key="frame" x="236" y="30" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KnifeAmmo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5i2-QP-iyl">
+                                <rect key="frame" x="836" y="30" width="120" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KnifeAmmo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wKN-uO-Khe">
+                                <rect key="frame" x="884" y="30" width="120" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="KA0-bL-3EO"/>
+                        <connections>
+                            <outlet property="delegate" destination="cty-dp-tOo" id="m2v-gq-2Iw"/>
+                        </connections>
+                    </glkView>
+                    <connections>
+                        <outlet property="Ammo1" destination="5i2-QP-iyl" id="w99-R0-3R2"/>
+                        <outlet property="Ammo2" destination="wKN-uO-Khe" id="5tX-wp-13I"/>
+                        <outlet property="heart1" destination="4P0-tC-DG8" id="jRP-iH-tF0"/>
+                        <outlet property="heart2" destination="VF4-GQ-Alu" id="kZb-Xj-Ljw"/>
+                        <outlet property="heart3" destination="7Jr-LT-NW6" id="PZB-s1-bas"/>
+                        <outlet property="onScreenScore" destination="ayN-14-lCg" id="g3r-fw-tUb"/>
+                    </connections>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftb-6a-LTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145.8984375" y="75.78125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="KnifeAmmo.png" width="600" height="470"/>
+        <image name="RedHeart.png" width="847" height="768"/>
+    </resources>
+</document>

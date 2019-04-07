@@ -7,9 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1222DEDC22472D24001059CD /* RedHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1222DEDA22472D23001059CD /* RedHeart.png */; };
+		1222DEDD22472D24001059CD /* KnifeAmmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1222DEDB22472D24001059CD /* KnifeAmmo.png */; };
+		12EF2D08223DB1DA00AACE97 /* BackgroundQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EF2D06223DB1DA00AACE97 /* BackgroundQuad.m */; };
+		12EF2D0B223DB1E300AACE97 /* RWTBackgroundQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EF2D09223DB1E300AACE97 /* RWTBackgroundQuad.m */; };
+		12EF2D0D223DB1EB00AACE97 /* forestBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EF2D0C223DB1EA00AACE97 /* forestBG.png */; };
+		12EF2D0F223DB5FE00AACE97 /* brass.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EF2D0E223DB5FE00AACE97 /* brass.png */; };
+		A42057AE2259524300B1CFC5 /* gunout.png in Resources */ = {isa = PBXBuildFile; fileRef = A42057AD2259524300B1CFC5 /* gunout.png */; };
+		A42057B02259567100B1CFC5 /* BULLETout.png in Resources */ = {isa = PBXBuildFile; fileRef = A42057AF2259567100B1CFC5 /* BULLETout.png */; };
+		A42057B4225958EF00B1CFC5 /* BULLETou3.png in Resources */ = {isa = PBXBuildFile; fileRef = A42057B3225958EF00B1CFC5 /* BULLETou3.png */; };
+		A42057B622595DA800B1CFC5 /* spike.m in Sources */ = {isa = PBXBuildFile; fileRef = A42057B522595DA800B1CFC5 /* spike.m */; };
+		A42057BA22595E6D00B1CFC5 /* RWTSpike.m in Sources */ = {isa = PBXBuildFile; fileRef = A42057B922595E6D00B1CFC5 /* RWTSpike.m */; };
+		A42057C02259864B00B1CFC5 /* grey.png in Resources */ = {isa = PBXBuildFile; fileRef = A42057BF2259864B00B1CFC5 /* grey.png */; };
+		A42057C32259876100B1CFC5 /* oof2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A42057C12259876100B1CFC5 /* oof2.mp3 */; };
+		A42057C42259876100B1CFC5 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A42057C22259876100B1CFC5 /* jump.mp3 */; };
+		A42057C6225988A000B1CFC5 /* HowToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42057C5225988A000B1CFC5 /* HowToPlay.storyboard */; };
+		A42057C8225988C800B1CFC5 /* howToPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A42057C7225988C800B1CFC5 /* howToPlay.png */; };
+		A42057CB2259897D00B1CFC5 /* HowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42057CA2259897D00B1CFC5 /* HowViewController.m */; };
+		A42057CF22598F0300B1CFC5 /* GOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42057CD22598F0200B1CFC5 /* GOViewController.m */; };
+		A42057D022598F0300B1CFC5 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42057CE22598F0200B1CFC5 /* GameOver.storyboard */; };
+		A4587CAE2244307F002FC95A /* RWTKnife.m in Sources */ = {isa = PBXBuildFile; fileRef = A4587CAC2244307F002FC95A /* RWTKnife.m */; };
+		A4587CAF2244307F002FC95A /* betterknife.m in Sources */ = {isa = PBXBuildFile; fileRef = A4587CAD2244307F002FC95A /* betterknife.m */; };
+		A4587CB1224437FB002FC95A /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = A4587CB0224437FB002FC95A /* white.png */; };
+		A45BE369224733EB006B1072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BE368224733EA006B1072 /* Main.storyboard */; };
+		A45BE37022473439006B1072 /* Highscore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BE36D22473439006B1072 /* Highscore.storyboard */; };
+		A45BE37122473439006B1072 /* HSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BE36E22473439006B1072 /* HSViewController.m */; };
+		A472ED362221FBF80042EB2A /* RWTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED272221FBF60042EB2A /* RWTModel.m */; };
+		A472ED372221FBF80042EB2A /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A472ED282221FBF60042EB2A /* Game.storyboard */; };
+		A472ED382221FBF80042EB2A /* RWTSimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */; };
+		A472ED3C2221FBF80042EB2A /* RWTBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED332221FBF70042EB2A /* RWTBaseEffect.m */; };
+		A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */; };
+		A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED352221FBF80042EB2A /* RWTViewController.m */; };
+		A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED452221FD7A0042EB2A /* RWTGlock.m */; };
+		A472ED492221FE8A0042EB2A /* Glock19.m in Sources */ = {isa = PBXBuildFile; fileRef = A472ED482221FE8A0042EB2A /* Glock19.m */; };
+		B7A3343D2244460E0051D02C /* bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A334372244460D0051D02C /* bullet.m */; };
+		B7A3343E2244460E0051D02C /* RWTBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A334392244460D0051D02C /* RWTBullet.m */; };
+		B7CD9A0F223DC63000012ACB /* CollisionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A0D223DC63000012ACB /* CollisionHandler.m */; };
+		B7CD9A12223DC64800012ACB /* mushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A11223DC64800012ACB /* mushroom.m */; };
+		B7CD9A15223DC64E00012ACB /* RWTMushroom.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CD9A14223DC64E00012ACB /* RWTMushroom.m */; };
+		B7CD9A17223DC6EF00012ACB /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = B7CD9A16223DC6EE00012ACB /* mushroom.png */; };
+		BB998A932247195B00FF044C /* knifeThrow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A8D2247195A00FF044C /* knifeThrow.mp3 */; };
+		BB998A942247195B00FF044C /* mainGame2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A8E2247195A00FF044C /* mainGame2.mp3 */; };
+		BB998A952247195B00FF044C /* mainGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A8F2247195B00FF044C /* mainGame.mp3 */; };
+		BB998A962247195B00FF044C /* mainMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A902247195B00FF044C /* mainMenu.mp3 */; };
+		BB998A972247195B00FF044C /* gameStart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A912247195B00FF044C /* gameStart.mp3 */; };
+		BB998A982247195B00FF044C /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A922247195B00FF044C /* shoot.mp3 */; };
+		BB998A9D2247197600FF044C /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB998A9B2247197600FF044C /* SoundManager.m */; };
+		BB998A9E2247197600FF044C /* sfxPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB998A9C2247197600FF044C /* sfxPlayer.m */; };
+		BB998AA022471AAE00FF044C /* oof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB998A9F22471AAE00FF044C /* oof.mp3 */; };
 		BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029352218BFEF006845C9 /* AppDelegate.m */; };
-		BBC029392218BFEF006845C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029382218BFEF006845C9 /* ViewController.m */; };
-		BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293A2218BFEF006845C9 /* Main.storyboard */; };
+		BBC029392218BFEF006845C9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029382218BFEF006845C9 /* MainViewController.m */; };
 		BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293D2218BFF0006845C9 /* Assets.xcassets */; };
 		BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */; };
 		BBC029442218BFF0006845C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC029432218BFF0006845C9 /* main.m */; };
@@ -44,12 +91,81 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1222DEDA22472D23001059CD /* RedHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedHeart.png; sourceTree = "<group>"; };
+		1222DEDB22472D24001059CD /* KnifeAmmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KnifeAmmo.png; sourceTree = "<group>"; };
+		12EF2D06223DB1DA00AACE97 /* BackgroundQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundQuad.m; sourceTree = "<group>"; };
+		12EF2D07223DB1DA00AACE97 /* BackgroundQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundQuad.h; sourceTree = "<group>"; };
+		12EF2D09223DB1E300AACE97 /* RWTBackgroundQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBackgroundQuad.m; sourceTree = "<group>"; };
+		12EF2D0A223DB1E300AACE97 /* RWTBackgroundQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBackgroundQuad.h; sourceTree = "<group>"; };
+		12EF2D0C223DB1EA00AACE97 /* forestBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forestBG.png; sourceTree = "<group>"; };
+		12EF2D0E223DB5FE00AACE97 /* brass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brass.png; sourceTree = "<group>"; };
+		A42057AD2259524300B1CFC5 /* gunout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gunout.png; sourceTree = "<group>"; };
+		A42057AF2259567100B1CFC5 /* BULLETout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BULLETout.png; sourceTree = "<group>"; };
+		A42057B3225958EF00B1CFC5 /* BULLETou3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BULLETou3.png; sourceTree = "<group>"; };
+		A42057B522595DA800B1CFC5 /* spike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spike.m; sourceTree = "<group>"; };
+		A42057B722595DB500B1CFC5 /* spike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spike.h; sourceTree = "<group>"; };
+		A42057B822595E6D00B1CFC5 /* RWTSpike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSpike.h; sourceTree = "<group>"; };
+		A42057B922595E6D00B1CFC5 /* RWTSpike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSpike.m; sourceTree = "<group>"; };
+		A42057BF2259864B00B1CFC5 /* grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey.png; sourceTree = "<group>"; };
+		A42057C12259876100B1CFC5 /* oof2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oof2.mp3; sourceTree = "<group>"; };
+		A42057C22259876100B1CFC5 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
+		A42057C5225988A000B1CFC5 /* HowToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HowToPlay.storyboard; sourceTree = "<group>"; };
+		A42057C7225988C800B1CFC5 /* howToPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howToPlay.png; sourceTree = "<group>"; };
+		A42057C92259897D00B1CFC5 /* HowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HowViewController.h; sourceTree = "<group>"; };
+		A42057CA2259897D00B1CFC5 /* HowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HowViewController.m; sourceTree = "<group>"; };
+		A42057CC22598F0200B1CFC5 /* GOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOViewController.h; sourceTree = "<group>"; };
+		A42057CD22598F0200B1CFC5 /* GOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOViewController.m; sourceTree = "<group>"; };
+		A42057CE22598F0200B1CFC5 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
+		A4587CAA2244307F002FC95A /* RWTKnife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTKnife.h; sourceTree = "<group>"; };
+		A4587CAB2244307F002FC95A /* betterknife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = betterknife.h; sourceTree = "<group>"; };
+		A4587CAC2244307F002FC95A /* RWTKnife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTKnife.m; sourceTree = "<group>"; };
+		A4587CAD2244307F002FC95A /* betterknife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = betterknife.m; sourceTree = "<group>"; };
+		A4587CB0224437FB002FC95A /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		A45BE368224733EA006B1072 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A45BE36D22473439006B1072 /* Highscore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Highscore.storyboard; sourceTree = "<group>"; };
+		A45BE36E22473439006B1072 /* HSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSViewController.m; sourceTree = "<group>"; };
+		A45BE36F22473439006B1072 /* HSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSViewController.h; sourceTree = "<group>"; };
+		A472ED272221FBF60042EB2A /* RWTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTModel.m; sourceTree = "<group>"; };
+		A472ED282221FBF60042EB2A /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		A472ED292221FBF60042EB2A /* RWTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTModel.h; sourceTree = "<group>"; };
+		A472ED2A2221FBF70042EB2A /* RWTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTViewController.h; sourceTree = "<group>"; };
+		A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleFragment.glsl; sourceTree = "<group>"; };
+		A472ED2D2221FBF70042EB2A /* RWTVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTVertex.h; sourceTree = "<group>"; };
+		A472ED312221FBF70042EB2A /* RWTBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBaseEffect.h; sourceTree = "<group>"; };
+		A472ED332221FBF70042EB2A /* RWTBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBaseEffect.m; sourceTree = "<group>"; };
+		A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RWTSimpleVertex.glsl; sourceTree = "<group>"; };
+		A472ED352221FBF80042EB2A /* RWTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTViewController.m; sourceTree = "<group>"; };
+		A472ED442221FD7A0042EB2A /* RWTGlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTGlock.h; sourceTree = "<group>"; };
+		A472ED452221FD7A0042EB2A /* RWTGlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTGlock.m; sourceTree = "<group>"; };
+		A472ED472221FE890042EB2A /* Glock19.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glock19.h; sourceTree = "<group>"; };
+		A472ED482221FE8A0042EB2A /* Glock19.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glock19.m; sourceTree = "<group>"; };
+		B7A334372244460D0051D02C /* bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bullet.m; sourceTree = "<group>"; };
+		B7A334382244460D0051D02C /* bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bullet.h; sourceTree = "<group>"; };
+		B7A334392244460D0051D02C /* RWTBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTBullet.m; sourceTree = "<group>"; };
+		B7A3343A2244460E0051D02C /* RWTBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTBullet.h; sourceTree = "<group>"; };
+		B7CD9A0D223DC63000012ACB /* CollisionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHandler.m; sourceTree = "<group>"; };
+		B7CD9A0E223DC63000012ACB /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
+		B7CD9A10223DC64800012ACB /* mushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mushroom.h; sourceTree = "<group>"; };
+		B7CD9A11223DC64800012ACB /* mushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mushroom.m; sourceTree = "<group>"; };
+		B7CD9A13223DC64E00012ACB /* RWTMushroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTMushroom.h; sourceTree = "<group>"; };
+		B7CD9A14223DC64E00012ACB /* RWTMushroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTMushroom.m; sourceTree = "<group>"; };
+		B7CD9A16223DC6EE00012ACB /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
+		BB998A8D2247195A00FF044C /* knifeThrow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knifeThrow.mp3; sourceTree = "<group>"; };
+		BB998A8E2247195A00FF044C /* mainGame2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainGame2.mp3; sourceTree = "<group>"; };
+		BB998A8F2247195B00FF044C /* mainGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainGame.mp3; sourceTree = "<group>"; };
+		BB998A902247195B00FF044C /* mainMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMenu.mp3; sourceTree = "<group>"; };
+		BB998A912247195B00FF044C /* gameStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameStart.mp3; sourceTree = "<group>"; };
+		BB998A922247195B00FF044C /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
+		BB998A992247197600FF044C /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		BB998A9A2247197600FF044C /* sfxPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sfxPlayer.h; sourceTree = "<group>"; };
+		BB998A9B2247197600FF044C /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		BB998A9C2247197600FF044C /* sfxPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sfxPlayer.m; sourceTree = "<group>"; };
+		BB998A9F22471AAE00FF044C /* oof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oof.mp3; sourceTree = "<group>"; };
 		BBC029312218BFEF006845C9 /* GunnerTheRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GunnerTheRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC029342218BFEF006845C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBC029352218BFEF006845C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BBC029372218BFEF006845C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BBC029382218BFEF006845C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BBC0293B2218BFEF006845C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBC029372218BFEF006845C9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BBC029382218BFEF006845C9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		BBC0293D2218BFF0006845C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC029402218BFF0006845C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC029422218BFF0006845C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +235,15 @@
 		BBC029332218BFEF006845C9 /* GunnerTheRunner */ = {
 			isa = PBXGroup;
 			children = (
+				A42057BF2259864B00B1CFC5 /* grey.png */,
+				1222DEDB22472D24001059CD /* KnifeAmmo.png */,
+				1222DEDA22472D23001059CD /* RedHeart.png */,
+				12EF2D0E223DB5FE00AACE97 /* brass.png */,
+				12EF2D0C223DB1EA00AACE97 /* forestBG.png */,
+				12EF2D0A223DB1E300AACE97 /* RWTBackgroundQuad.h */,
+				12EF2D09223DB1E300AACE97 /* RWTBackgroundQuad.m */,
+				12EF2D07223DB1DA00AACE97 /* BackgroundQuad.h */,
+				12EF2D06223DB1DA00AACE97 /* BackgroundQuad.m */,
 				BBC0297B2218EF15006845C9 /* parallax-mountain-bg.png */,
 				BBC029782218EF15006845C9 /* parallax-mountain-foreground-trees.png */,
 				BBC029792218EF15006845C9 /* parallax-mountain-montain-far.png */,
@@ -130,13 +255,73 @@
 				BBC029732218D952006845C9 /* highVelocityCutlery.png */,
 				BBC029342218BFEF006845C9 /* AppDelegate.h */,
 				BBC029352218BFEF006845C9 /* AppDelegate.m */,
-				BBC029372218BFEF006845C9 /* ViewController.h */,
-				BBC029382218BFEF006845C9 /* ViewController.m */,
-				BBC0293A2218BFEF006845C9 /* Main.storyboard */,
+				BBC029372218BFEF006845C9 /* MainViewController.h */,
+				BBC029382218BFEF006845C9 /* MainViewController.m */,
+				A45BE368224733EA006B1072 /* Main.storyboard */,
+				A45BE36D22473439006B1072 /* Highscore.storyboard */,
+				A45BE36F22473439006B1072 /* HSViewController.h */,
+				A45BE36E22473439006B1072 /* HSViewController.m */,
 				BBC0293D2218BFF0006845C9 /* Assets.xcassets */,
 				BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */,
 				BBC029422218BFF0006845C9 /* Info.plist */,
 				BBC029432218BFF0006845C9 /* main.m */,
+				A472ED282221FBF60042EB2A /* Game.storyboard */,
+				A472ED312221FBF70042EB2A /* RWTBaseEffect.h */,
+				A472ED332221FBF70042EB2A /* RWTBaseEffect.m */,
+				A472ED292221FBF60042EB2A /* RWTModel.h */,
+				A472ED272221FBF60042EB2A /* RWTModel.m */,
+				A472ED2B2221FBF70042EB2A /* RWTSimpleFragment.glsl */,
+				A472ED342221FBF70042EB2A /* RWTSimpleVertex.glsl */,
+				A472ED2D2221FBF70042EB2A /* RWTVertex.h */,
+				A472ED2A2221FBF70042EB2A /* RWTViewController.h */,
+				A472ED352221FBF80042EB2A /* RWTViewController.m */,
+				A472ED472221FE890042EB2A /* Glock19.h */,
+				A472ED482221FE8A0042EB2A /* Glock19.m */,
+				A42057AD2259524300B1CFC5 /* gunout.png */,
+				A472ED442221FD7A0042EB2A /* RWTGlock.h */,
+				A472ED452221FD7A0042EB2A /* RWTGlock.m */,
+				B7CD9A0E223DC63000012ACB /* CollisionHandler.h */,
+				B7CD9A0D223DC63000012ACB /* CollisionHandler.m */,
+				B7CD9A10223DC64800012ACB /* mushroom.h */,
+				B7CD9A11223DC64800012ACB /* mushroom.m */,
+				A42057B522595DA800B1CFC5 /* spike.m */,
+				A42057CE22598F0200B1CFC5 /* GameOver.storyboard */,
+				A42057CC22598F0200B1CFC5 /* GOViewController.h */,
+				A42057CD22598F0200B1CFC5 /* GOViewController.m */,
+				A42057B722595DB500B1CFC5 /* spike.h */,
+				B7CD9A13223DC64E00012ACB /* RWTMushroom.h */,
+				B7CD9A14223DC64E00012ACB /* RWTMushroom.m */,
+				A42057B822595E6D00B1CFC5 /* RWTSpike.h */,
+				A42057B922595E6D00B1CFC5 /* RWTSpike.m */,
+				B7CD9A16223DC6EE00012ACB /* mushroom.png */,
+				A4587CAB2244307F002FC95A /* betterknife.h */,
+				A4587CAD2244307F002FC95A /* betterknife.m */,
+				A4587CAA2244307F002FC95A /* RWTKnife.h */,
+				A4587CAC2244307F002FC95A /* RWTKnife.m */,
+				BB998A9A2247197600FF044C /* sfxPlayer.h */,
+				BB998A9C2247197600FF044C /* sfxPlayer.m */,
+				BB998A992247197600FF044C /* SoundManager.h */,
+				BB998A9B2247197600FF044C /* SoundManager.m */,
+				A4587CB0224437FB002FC95A /* white.png */,
+				B7A334382244460D0051D02C /* bullet.h */,
+				B7A334372244460D0051D02C /* bullet.m */,
+				B7A3343A2244460E0051D02C /* RWTBullet.h */,
+				B7A334392244460D0051D02C /* RWTBullet.m */,
+				A42057B3225958EF00B1CFC5 /* BULLETou3.png */,
+				A42057AF2259567100B1CFC5 /* BULLETout.png */,
+				BB998A912247195B00FF044C /* gameStart.mp3 */,
+				BB998A8D2247195A00FF044C /* knifeThrow.mp3 */,
+				BB998A8F2247195B00FF044C /* mainGame.mp3 */,
+				BB998A8E2247195A00FF044C /* mainGame2.mp3 */,
+				BB998A902247195B00FF044C /* mainMenu.mp3 */,
+				BB998A922247195B00FF044C /* shoot.mp3 */,
+				BB998A9F22471AAE00FF044C /* oof.mp3 */,
+				A42057C22259876100B1CFC5 /* jump.mp3 */,
+				A42057C12259876100B1CFC5 /* oof2.mp3 */,
+				A42057C7225988C800B1CFC5 /* howToPlay.png */,
+				A42057C5225988A000B1CFC5 /* HowToPlay.storyboard */,
+				A42057C92259897D00B1CFC5 /* HowViewController.h */,
+				A42057CA2259897D00B1CFC5 /* HowViewController.m */,
 			);
 			path = GunnerTheRunner;
 			sourceTree = "<group>";
@@ -261,18 +446,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42057B02259567100B1CFC5 /* BULLETout.png in Resources */,
+				A42057B4225958EF00B1CFC5 /* BULLETou3.png in Resources */,
 				BBC0297D2218EF15006845C9 /* parallax-mountain-foreground-trees.png in Resources */,
+				BB998A952247195B00FF044C /* mainGame.mp3 in Resources */,
+				B7CD9A17223DC6EF00012ACB /* mushroom.png in Resources */,
+				A472ED382221FBF80042EB2A /* RWTSimpleFragment.glsl in Resources */,
 				BBC029762218E845006845C9 /* bullets.png in Resources */,
+				BB998AA022471AAE00FF044C /* oof.mp3 in Resources */,
+				A42057C8225988C800B1CFC5 /* howToPlay.png in Resources */,
 				BBC029722218D79B006845C9 /* G19_Gen4-107rot (1).png in Resources */,
+				A4587CB1224437FB002FC95A /* white.png in Resources */,
 				BBC0297C2218EF15006845C9 /* parallax-mountain-mountains.png in Resources */,
+				A42057D022598F0300B1CFC5 /* GameOver.storyboard in Resources */,
+				A42057C42259876100B1CFC5 /* jump.mp3 in Resources */,
+				BB998A932247195B00FF044C /* knifeThrow.mp3 in Resources */,
+				A472ED372221FBF80042EB2A /* Game.storyboard in Resources */,
+				A42057C6225988A000B1CFC5 /* HowToPlay.storyboard in Resources */,
 				BBC029742218D952006845C9 /* highVelocityCutlery.png in Resources */,
 				BBC029412218BFF0006845C9 /* LaunchScreen.storyboard in Resources */,
+				A472ED3D2221FBF80042EB2A /* RWTSimpleVertex.glsl in Resources */,
 				BBC0297F2218EF15006845C9 /* parallax-mountain-trees.png in Resources */,
 				BBC0297E2218EF15006845C9 /* parallax-mountain-montain-far.png in Resources */,
+				BB998A942247195B00FF044C /* mainGame2.mp3 in Resources */,
+				BB998A962247195B00FF044C /* mainMenu.mp3 in Resources */,
+				A42057AE2259524300B1CFC5 /* gunout.png in Resources */,
+				BB998A982247195B00FF044C /* shoot.mp3 in Resources */,
+				12EF2D0F223DB5FE00AACE97 /* brass.png in Resources */,
 				BBC0293E2218BFF0006845C9 /* Assets.xcassets in Resources */,
-				BBC0293C2218BFEF006845C9 /* Main.storyboard in Resources */,
+				A42057C32259876100B1CFC5 /* oof2.mp3 in Resources */,
+				1222DEDD22472D24001059CD /* KnifeAmmo.png in Resources */,
+				1222DEDC22472D24001059CD /* RedHeart.png in Resources */,
+				A42057C02259864B00B1CFC5 /* grey.png in Resources */,
 				BBC029802218EF15006845C9 /* parallax-mountain-bg.png in Resources */,
+				12EF2D0D223DB1EB00AACE97 /* forestBG.png in Resources */,
+				A45BE37022473439006B1072 /* Highscore.storyboard in Resources */,
 				BBC0296C2218D3F8006845C9 /* coollogo_com-8202986rotated2 (1).png in Resources */,
+				A45BE369224733EB006B1072 /* Main.storyboard in Resources */,
+				BB998A972247195B00FF044C /* gameStart.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +508,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBC029392218BFEF006845C9 /* ViewController.m in Sources */,
+				BBC029392218BFEF006845C9 /* MainViewController.m in Sources */,
+				B7CD9A0F223DC63000012ACB /* CollisionHandler.m in Sources */,
+				A42057CB2259897D00B1CFC5 /* HowViewController.m in Sources */,
+				A42057BA22595E6D00B1CFC5 /* RWTSpike.m in Sources */,
+				A472ED3E2221FBF80042EB2A /* RWTViewController.m in Sources */,
+				BB998A9E2247197600FF044C /* sfxPlayer.m in Sources */,
+				B7CD9A12223DC64800012ACB /* mushroom.m in Sources */,
 				BBC029442218BFF0006845C9 /* main.m in Sources */,
+				A42057B622595DA800B1CFC5 /* spike.m in Sources */,
+				B7A3343E2244460E0051D02C /* RWTBullet.m in Sources */,
+				A42057CF22598F0300B1CFC5 /* GOViewController.m in Sources */,
+				A4587CAF2244307F002FC95A /* betterknife.m in Sources */,
 				BBC029362218BFEF006845C9 /* AppDelegate.m in Sources */,
+				A472ED492221FE8A0042EB2A /* Glock19.m in Sources */,
+				A472ED3C2221FBF80042EB2A /* RWTBaseEffect.m in Sources */,
+				A472ED462221FD7A0042EB2A /* RWTGlock.m in Sources */,
+				A472ED362221FBF80042EB2A /* RWTModel.m in Sources */,
+				B7A3343D2244460E0051D02C /* bullet.m in Sources */,
+				A45BE37122473439006B1072 /* HSViewController.m in Sources */,
+				12EF2D0B223DB1E300AACE97 /* RWTBackgroundQuad.m in Sources */,
+				A4587CAE2244307F002FC95A /* RWTKnife.m in Sources */,
+				BB998A9D2247197600FF044C /* SoundManager.m in Sources */,
+				12EF2D08223DB1DA00AACE97 /* BackgroundQuad.m in Sources */,
+				B7CD9A15223DC64E00012ACB /* RWTMushroom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,14 +567,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BBC0293A2218BFEF006845C9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBC0293B2218BFEF006845C9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BBC0293F2218BFF0006845C9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,13 +695,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AW8F3NYK5G;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner88;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -488,13 +714,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AW8F3NYK5G;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = GunnerTheRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = BCIT.GunnerTheRunner88;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
